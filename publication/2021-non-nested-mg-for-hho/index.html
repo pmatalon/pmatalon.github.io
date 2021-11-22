@@ -30,10 +30,10 @@
   
     
   
-  <meta name="description" content="Fast HHO solver for research" />
+  <meta name="description" content="The use of modern discretization technologies such as Hybrid High-Order (HHO) methods, coupled with appropriate linear solvers, allow for the robust and fast solution of Partial Differential Equations (PDEs). Although efficient linear solvers have recently been made available for simpler cases, complex geometries remain a challenge for large scale problems. To address this problem, we propose in this work a geometric multigrid algorithm for unstructured non-nested meshes. The non-nestedness is handled in the prolongation operator through the use of the *L2*-orthogonal projection from the coarse elements onto the fine ones. However, as the exact evaluation of this projection can be computationally expensive, we develop a cheaper approximate implementation that globally preserves the approximation properties of the *L2*-orthogonal projection. Additionally, as the multigrid method requires not only the coarsening of the elements, but also that of the faces, we leverage the geometric flexibility of polytopal elements to define an abstract non-nested coarsening strategy based on element agglomeration and face collapsing. Finally, the multigrid method is tested on homogeneous and heterogeneous diffusion problems in two and three space dimensions. The solver exhibits near-perfect asymptotic optimality for moderate degrees of approximation." />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://pmatalon.github.io/software/fhhos4/" />
+  <link rel="alternate" hreflang="en-us" href="https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/" />
 
   
 
@@ -276,7 +276,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://pmatalon.github.io/software/fhhos4/" />
+  <link rel="canonical" href="https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/" />
 
   
   
@@ -293,39 +293,80 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="P. Matalon" />
-  <meta property="og:url" content="https://pmatalon.github.io/software/fhhos4/" />
-  <meta property="og:title" content="fhhos4 (pronounce &#39;phosphore&#39;) | P. Matalon" />
-  <meta property="og:description" content="Fast HHO solver for research" /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:url" content="https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/" />
+  <meta property="og:title" content="Towards robust, fast solutions of elliptic equations on complex domains through hybrid high‐order discretizations and non‐nested multigrid methods | P. Matalon" />
+  <meta property="og:description" content="The use of modern discretization technologies such as Hybrid High-Order (HHO) methods, coupled with appropriate linear solvers, allow for the robust and fast solution of Partial Differential Equations (PDEs). Although efficient linear solvers have recently been made available for simpler cases, complex geometries remain a challenge for large scale problems. To address this problem, we propose in this work a geometric multigrid algorithm for unstructured non-nested meshes. The non-nestedness is handled in the prolongation operator through the use of the *L2*-orthogonal projection from the coarse elements onto the fine ones. However, as the exact evaluation of this projection can be computationally expensive, we develop a cheaper approximate implementation that globally preserves the approximation properties of the *L2*-orthogonal projection. Additionally, as the multigrid method requires not only the coarsening of the elements, but also that of the faces, we leverage the geometric flexibility of polytopal elements to define an abstract non-nested coarsening strategy based on element agglomeration and face collapsing. Finally, the multigrid method is tested on homogeneous and heterogeneous diffusion problems in two and three space dimensions. The solver exhibits near-perfect asymptotic optimality for moderate degrees of approximation." /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2018-09-01T00:00:00&#43;00:00"
+        content="2021-05-01T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2018-09-01T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2021-05-01T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/"
+  },
+  "headline": "Towards robust, fast solutions of elliptic equations on complex domains through hybrid high‐order discretizations and non‐nested multigrid methods",
+  
+  "datePublished": "2021-05-01T00:00:00Z",
+  "dateModified": "2021-05-01T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "D. A. Di Pietro"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "P. Matalon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "The use of modern discretization technologies such as Hybrid High-Order (HHO) methods, coupled with appropriate linear solvers, allow for the robust and fast solution of Partial Differential Equations (PDEs). Although efficient linear solvers have recently been made available for simpler cases, complex geometries remain a challenge for large scale problems. To address this problem, we propose in this work a geometric multigrid algorithm for unstructured non-nested meshes. The non-nestedness is handled in the prolongation operator through the use of the *L2*-orthogonal projection from the coarse elements onto the fine ones. However, as the exact evaluation of this projection can be computationally expensive, we develop a cheaper approximate implementation that globally preserves the approximation properties of the *L2*-orthogonal projection. Additionally, as the multigrid method requires not only the coarsening of the elements, but also that of the faces, we leverage the geometric flexibility of polytopal elements to define an abstract non-nested coarsening strategy based on element agglomeration and face collapsing. Finally, the multigrid method is tested on homogeneous and heterogeneous diffusion problems in two and three space dimensions. The solver exhibits near-perfect asymptotic optimality for moderate degrees of approximation."
+}
+</script>
+
+  
+
+  
+
   
 
   
 
 
 
-  
-
-  
-
-  
 
 
-
-
-
-  <title>fhhos4 (pronounce &#39;phosphore&#39;) | P. Matalon</title>
+  <title>Towards robust, fast solutions of elliptic equations on complex domains through hybrid high‐order discretizations and non‐nested multigrid methods | P. Matalon</title>
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="2f2f1dcdc9f1db44da78797160a8cac6" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="353396c1c2cc64cbeed620fc86ecf636" >
 
   
   
@@ -583,7 +624,16 @@
   </div>
 
   <div class="page-body">
-    <article class="article">
+    
+
+
+
+
+
+
+
+
+<div class="pub">
 
   
 
@@ -604,7 +654,7 @@
   
   
 <div class="article-container pt-3">
-  <h1>fhhos4 (pronounce &#39;phosphore&#39;)</h1>
+  <h1>Towards robust, fast solutions of elliptic equations on complex domains through hybrid high‐order discretizations and non‐nested multigrid methods</h1>
 
   
 
@@ -616,6 +666,21 @@
 
   
   
+  
+  
+  <div>
+    
+
+  <span >
+      D. A. Di Pietro</span>, <span >
+      F. Hülsemann</span>, <span >
+      P. Matalon</span>, <span >
+      P. Mycek</span>, <span >
+      U. Rüde</span>, <span >
+      D. Ruiz</span>
+  </div>
+  
+  
 
   
   <span class="article-date">
@@ -623,7 +688,7 @@
     
       
     
-    Sep 1, 2018
+    2021
   </span>
   
 
@@ -665,6 +730,10 @@
 
 
 
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/2021-non-nested-mg-for-hho/cite.bib">
+  Cite
+</a>
 
 
 
@@ -678,19 +747,22 @@
 
 
 
+<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1002/nme.6803" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+  
+  
+  
+  
   
   
   
     
   
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header" href="https://bitbucket.org/pimat/dghho/src/master/" target="_blank" rel="noopener">
-    <i class="fab fa-atlassian mr-1"></i>Code</a>
+  <a class="btn btn-outline-primary btn-page-header" href="https://hal.archives-ouvertes.fr/hal-03163476" target="_blank" rel="noopener">
+    <i class="ai ai-hal mr-1"></i>HAL</a>
 
 
 </div>
@@ -703,10 +775,47 @@
 
   <div class="article-container">
 
-    <div class="article-style">
-      <p>fhhos4 stands for Fast HHO Solver for Research. It is an open-source code that solves diffusion problems with the Hybrid High-Order (HHO) discretizations.</p>
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">The use of modern discretization technologies such as Hybrid High-Order (HHO) methods, coupled with appropriate linear solvers, allow for the robust and fast solution of Partial Differential Equations (PDEs). Although efficient linear solvers have recently been made available for simpler cases, complex geometries remain a challenge for large scale problems. To address this problem, we propose in this work a geometric multigrid algorithm for unstructured non-nested meshes. The non-nestedness is handled in the prolongation operator through the use of the <em>L2</em>-orthogonal projection from the coarse elements onto the fine ones. However, as the exact evaluation of this projection can be computationally expensive, we develop a cheaper approximate implementation that globally preserves the approximation properties of the <em>L2</em>-orthogonal projection. Additionally, as the multigrid method requires not only the coarsening of the elements, but also that of the faces, we leverage the geometric flexibility of polytopal elements to define an abstract non-nested coarsening strategy based on element agglomeration and face collapsing. Finally, the multigrid method is tested on homogeneous and heterogeneous diffusion problems in two and three space dimensions. The solver exhibits near-perfect asymptotic optimality for moderate degrees of approximation.</p>
+    
 
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#2">
+              Journal article
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
     </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9"><em>International Journal for Numerical Methods in Engineering</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
 
     
 
@@ -728,7 +837,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://pmatalon.github.io/software/fhhos4/&amp;text=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/&amp;text=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -741,7 +850,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://pmatalon.github.io/software/fhhos4/&amp;t=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/&amp;t=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -754,7 +863,7 @@
       
       
       <li>
-        <a href="mailto:?subject=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29&amp;body=https://pmatalon.github.io/software/fhhos4/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods&amp;body=https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -767,7 +876,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://pmatalon.github.io/software/fhhos4/&amp;title=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/&amp;title=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -780,7 +889,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29%20https://pmatalon.github.io/software/fhhos4/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods%20https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -793,7 +902,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://pmatalon.github.io/software/fhhos4/&amp;title=fhhos4%20%28pronounce%20&amp;#39;phosphore&amp;#39;%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://pmatalon.github.io/publication/2021-non-nested-mg-for-hho/&amp;title=Towards%20robust,%20fast%20solutions%20of%20elliptic%20equations%20on%20complex%20domains%20through%20hybrid%20high%e2%80%90order%20discretizations%20and%20non%e2%80%90nested%20multigrid%20methods" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -813,114 +922,65 @@
 
   
   
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 
 
   
   
-  
-    
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <a href="https://pmatalon.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hu52a603635ecebd45650b162dadabb4e5_12861_270x270_fill_q75_lanczos_center.jpg" alt="Pierre Matalon"></a>
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="https://pmatalon.github.io/">Pierre Matalon</a></h5>
-      <h6 class="card-subtitle">Postdoctoral researcher</h6>
-      
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <a href="mailto:pierre.matalon@gmail.com" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.fr/citations?user=2BPu-jEAAAAJ&amp;hl=fr" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://orcid.org/0000-0002-4288-2289" target="_blank" rel="noopener">
-        <i class="ai ai-orcid"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://www.researchgate.net/profile/Pierre-Matalon-2" target="_blank" rel="noopener">
-        <i class="ai ai-researchgate"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 
 
   </div>
-</article>
+</div>
   </div>
 
   <div class="page-footer">
