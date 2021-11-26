@@ -13,11 +13,22 @@
     </image>
     
     <item>
-      <title>fhhos4 (pronounce &#39;phosphore&#39;)</title>
+      <title>fhhos4</title>
       <link>https://pmatalon.github.io/software/fhhos4/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/software/fhhos4/</guid>
-      <description>&lt;p&gt;fhhos4 stands for Fast HHO Solver for Research. It is an open-source code that solves diffusion problems with the Hybrid High-Order (HHO) discretizations.&lt;/p&gt;
+      <description>&lt;p&gt;fhhos4 (pronounce &amp;lsquo;phosphore&amp;rsquo;) stands for Fast HHO Solver for Research. It is an open-source code that solves diffusion problems with the Hybrid High-Order (HHO) discretizations.&lt;/p&gt;
+&lt;p&gt;Features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;solves diffusion problems with piecewise constant tensors&lt;/li&gt;
+&lt;li&gt;HHO and DG discretizations&lt;/li&gt;
+&lt;li&gt;high-order solutions&lt;/li&gt;
+&lt;li&gt;handles unstructured meshes&lt;/li&gt;
+&lt;li&gt;binded to the GMSH mesher&lt;/li&gt;
+&lt;li&gt;implements geometric and algebraic multigrid methods&lt;/li&gt;
+&lt;li&gt;exports linear systems&lt;/li&gt;
+&lt;li&gt;shared-memory parallelism&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

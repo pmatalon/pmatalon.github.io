@@ -248,7 +248,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.481af39c39ffd87b2d14f39943e7c723.css" />
+  <link rel="stylesheet" href="/css/wowchemy.cd4c8766deea50c2e68145da698f1388.css" />
 
   
 
@@ -533,7 +533,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          <a class="nav-link " href="/#preprints"><span>Publications</span></a>
         </li>
 
         
@@ -747,10 +747,18 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1137/20M1342471" target="_blank" rel="noopener">
-  DOI
-</a>
 
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://doi.org/10.1137/20M1342471" target="_blank" rel="noopener">
+    <i class="ai ai-closed-access mr-1"></i>SIAM</a>
 
   
   
@@ -762,7 +770,7 @@
     
   
   <a class="btn btn-outline-primary btn-page-header" href="https://hal.archives-ouvertes.fr/hal-02434411" target="_blank" rel="noopener">
-    <i class="ai ai-hal mr-1"></i>HAL</a>
+    <i class="ai ai-open-access mr-1"></i>HAL</a>
 
 
 </div>
@@ -815,7 +823,147 @@
 
     <div class="space-below"></div>
 
-    <div class="article-style"></div>
+    <div class="article-style"><h2 id="reproduction-of-the-numerical-experiments">Reproduction of the numerical experiments</h2>
+<p>The experiments can be reproduced through the open-source code <a href="/software/fhhos4/">fhhos4</a>, release 1.0.</p>
+<h3 id="figure-41">Figure 4.1</h3>
+<pre><code class="language-bash"># 2D cart
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512|1024}
+# 2D tri
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024|2048}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512}
+# 3D cart
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {16|32|64|128}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {16|32|64|128}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {8|16|32|64}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {8|16|32|64}
+# 3D tetra
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 0 -n 16 # diverging
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 1 -n {8|16|32|64}
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 2 -n {8|16|32}
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 3 -n {8|16|32}
+</code></pre>
+<h3 id="figure-42">Figure 4.2</h3>
+<p>Replace the * characters with numerical values in</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -n 512 -s mg -cycle V,*,* 
+</code></pre>
+<h3 id="figure-43">Figure 4.3</h3>
+<p>Replace the * characters with numerical values in</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo square -mesh stetra -mesher inhouse -k 1 -n 32 -s mg -cycle V,*,* 
+</code></pre>
+<h3 id="figure-44">Figure 4.4</h3>
+<p>Important parameter: <code>-smoothers bj23,bj23</code>.</p>
+<p>Replace the * characters with numerical values in</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -n 512 -s mg -smoothers bj23,bj23 -cycle V,*,* 
+</code></pre>
+<h3 id="figure-45">Figure 4.5</h3>
+<pre><code class="language-bash"># 2D cart
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 2 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 3 -n {32|64|128|256|512|1024}
+# 2D tri
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024|2048}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 3 -n {32|64|128|256|512}
+# 3D cart
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 0 -n {16|32|64|128}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 1 -n {16|32|64|128}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 2 -n {8|16|32|64}
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 3 -n {8|16|32|64}
+# 3D tetra
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 0 -n 16 # diverging
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 1 -n {8|16|32|64}
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 2 -n {8|16|32}
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 3 -n {8|16|32}
+</code></pre>
+<h3 id="figure-47">Figure 4.7</h3>
+<pre><code class="language-bash">&gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512}
+</code></pre>
+<h3 id="figure-48">Figure 4.8</h3>
+<p>Important parameters: <code>-prolong {1|2} [-disable-hor]</code>.</p>
+<h4 id="a-v03">(a) V(0,3)</h4>
+<pre><code class="language-bash"># cell k and injection
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 2 -disable-hor -n {32|64|128|256|512|1024}
+# cell k and average
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 1 -disable-hor -n {32|64|128|256|512|1024}
+# cell k+1 and injection
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 2 -n {32|64|128|256|512|1024}
+# cell k+1 and average (final algo)
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 1 -n {32|64|128|256|512|1024}
+</code></pre>
+<h4 id="b-v12">(b) V(1,2)</h4>
+<pre><code class="language-bash"># cell k and injection
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 2 -disable-hor -n {32|64|128|256|512|1024}
+# cell k and average
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 1 -disable-hor -n {32|64|128|256|512|1024}
+# cell k+1 and injection
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 2 -n {32|64|128|256|512|1024}
+# cell k+1 and average (final algo)
+&gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 1 -n {32|64|128|256|512|1024}
+</code></pre>
+<h3 id="figure-49">Figure 4.9</h3>
+<p>Modify the value of the parameter <code>-heterog</code> from 1e0 to 1e8:</p>
+<h4 id="a-heterogeneous-weighting">(a) Heterogeneous weighting</h4>
+<pre><code class="language-bash">&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 0 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 1 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 2 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 3 -heterog {1e0-1e8}
+</code></pre>
+<h4 id="b-homogeneous-weighting">(b) Homogeneous weighting</h4>
+<p>Important parameter: <code>-disable-heterog-weight</code>.</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 0 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 1 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 2 -heterog {1e0-1e8}
+&gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 3 -heterog {1e0-1e8}
+</code></pre>
+<h3 id="figure-410">Figure 4.10</h3>
+<p>Important parameter: <code>-fcs {0|1}</code>.</p>
+<h4 id="a-with-face-coarsening">(a) With face coarsening</h4>
+<pre><code class="language-bash">&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 0 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 1 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 3 -n {32|64|128|256|512}
+</code></pre>
+<h4 id="b-without-face-coarsening">(b) Without face coarsening</h4>
+<pre><code class="language-bash">&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 0 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 1 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 3 -n {32|64|128|256|512}
+</code></pre>
+<h3 id="figure-411">Figure 4.11</h3>
+<p>Important parameter: <code>-cs b</code>.</p>
+<pre><code class="language-bash"># Custom Bey's refinement, V(0,6)
+&gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,6 -n {8|16|32|64}
+# Custom Bey's refinement, V(0,8)
+&gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,8 -n {8|16|32|64}
+# Custom Bey's refinement, V(0,10)
+&gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,10 -n {8|16|32|64}
+# Cartesian tet. refinement, V(0,6)
+&gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -k 1 -s mg -cs s -cycle V,0,6 -n {8|16|32|64}
+</code></pre>
+<h3 id="figure-412">Figure 4.12</h3>
+<pre><code class="language-bash">&gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 0 -n {8|16|32} # diverges at n=32
+&gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 1 -n {8|16|32}
+&gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 2 -n {8|16|32}
+&gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 3 -n {8|16|32}
+</code></pre>
+<h3 id="figure-415">Figure 4.15</h3>
+<p>Important parameter: <code>-cs r</code>.</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 2 -n {32|64|128|256|512}
+&gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 3 -n {32|64|128|256|512}
+</code></pre>
+</div>
 
     
 

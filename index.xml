@@ -5,7 +5,7 @@
     <link>https://pmatalon.github.io/</link>
       <atom:link href="https://pmatalon.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>P. Matalon</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2121 Pierre Matalon</copyright><lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2121 Pierre Matalon</copyright><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>P. Matalon</title>
@@ -13,11 +13,126 @@
     </image>
     
     <item>
+      <title>High-order multigrid strategies for HHO discretizations of elliptic equations</title>
+      <link>https://pmatalon.github.io/publication/2021-high-order-strategies/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://pmatalon.github.io/publication/2021-high-order-strategies/</guid>
+      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
+&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;p&gt;In the following command lines, the strategies are configured by the parameter &lt;code&gt;-hp-config {1|2|3|4}&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-hp-config 1 # h-only
+-hp-config 2 # p-h
+-hp-config 3 # p-h*
+-hp-config 4 # hp-h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-3&#34;&gt;Figure 3&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 2 -n 1024
+&amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 3 -n 512
+&amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 4 -n 256
+&amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 5 -n 128
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figures-6-and-7&#34;&gt;Figures 6 and 7&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 6 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 7.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh cart -cs r -k 5 -n 128 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-8-and-9&#34;&gt;Figure 8 and 9&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 8 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 9.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -cs r -k 5 -n 64 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-10-and-11&#34;&gt;Figure 10 and 11&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 10 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 11.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -k 5 -n 256 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-12-and-13&#34;&gt;Figure 12 and 13&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 12 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 13.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -k 3 -n 64 -mesh cart -mesher inhouse -cs s -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-14-and-15&#34;&gt;Figure 14 and 15&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 14 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 15.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -k 3 -n 32 -mesh stetra -mesher inhouse -cs s -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-16-and-17&#34;&gt;Figure 16 and 17&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 16 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 17.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo genevawheel.geo -tc default -k 2 -n 32 -cs m -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fast solvers for robust discretizations in computational fluid dynamics</title>
+      <link>https://pmatalon.github.io/publication/2021-phd-thesis/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://pmatalon.github.io/publication/2021-phd-thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Algebraic multigrid preconditioner for statically condensed systems arising from lowest-order hybrid discretizations</title>
       <link>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</link>
       <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
+&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;h3 id=&#34;figure-42-and-table-42&#34;&gt;Figure 4.2 and Table 4.2&lt;/h3&gt;
+&lt;p&gt;Execute the following command line&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 [[test_case]] [[solver]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where &lt;code&gt;[[test_case]]&lt;/code&gt; corresponds to&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-cart
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128
+# &#39;Cube-tet
+-geo cube -mesh tetra -k 0 -n 64
+# Complex-tet
+-geo platewith4holes -k 0 -n 16
+# Heterog1e8
+-geo square4quadrants -k 0 -n 2048 -heterog 1e8
+# Cube-cart-aniso100
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100
+# Cube-tet-aniso100
+-geo cube -mesh tetra -k 0 -n 64 -aniso 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and &lt;code&gt;[[solver]]&lt;/code&gt; corresponds to&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG
+-s fcguamg
+# C-AMG
+-s fcgaggregamg
+# AGMG
+-s agmg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-44&#34;&gt;Figure 4.4&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n {16|32|64|128} [[solver]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-43&#34;&gt;Table 4.3&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-44&#34;&gt;Table 4.4&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-cs dpa&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-45&#34;&gt;Table 4.5&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG (multiple coarsening)
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs mpa
+# U-AMG (double coarsening)
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+# C-AMG
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcgaggregamg
+# AGMG
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s agmg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-46&#34;&gt;Table 4.6&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-coarsening-prolong {3|4|5|6}&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-tet
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 6
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 4
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 5
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 3
+# Cube-cart-aniso100
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 6
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 4
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 5
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 3
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
@@ -33,15 +148,166 @@
       <link>https://pmatalon.github.io/publication/2020-mg-for-hho/</link>
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2020-mg-for-hho/</guid>
-      <description></description>
+      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
+&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4/&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;h3 id=&#34;figure-41&#34;&gt;Figure 4.1&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 2D cart
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512|1024}
+# 2D tri
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024|2048}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512}
+# 3D cart
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {16|32|64|128}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {16|32|64|128}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {8|16|32|64}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {8|16|32|64}
+# 3D tetra
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 0 -n 16 # diverging
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 1 -n {8|16|32|64}
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 2 -n {8|16|32}
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,2,2 -k 3 -n {8|16|32}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-42&#34;&gt;Figure 4.2&lt;/h3&gt;
+&lt;p&gt;Replace the * characters with numerical values in&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -n 512 -s mg -cycle V,*,* 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-43&#34;&gt;Figure 4.3&lt;/h3&gt;
+&lt;p&gt;Replace the * characters with numerical values in&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh stetra -mesher inhouse -k 1 -n 32 -s mg -cycle V,*,* 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-44&#34;&gt;Figure 4.4&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-smoothers bj23,bj23&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Replace the * characters with numerical values in&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -n 512 -s mg -smoothers bj23,bj23 -cycle V,*,* 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-45&#34;&gt;Figure 4.5&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 2D cart
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 2 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -k 3 -n {32|64|128|256|512|1024}
+# 2D tri
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024|2048}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -s mg -cycle V,0,3 -k 3 -n {32|64|128|256|512}
+# 3D cart
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 0 -n {16|32|64|128}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 1 -n {16|32|64|128}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 2 -n {8|16|32|64}
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -s mg -cycle V,0,6 -k 3 -n {8|16|32|64}
+# 3D tetra
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 0 -n 16 # diverging
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 1 -n {8|16|32|64}
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 2 -n {8|16|32}
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -s mg -cycle V,0,6 -k 3 -n {8|16|32}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-47&#34;&gt;Figure 4.7&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square4quadrants -tc kellogg -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 3 -n {32|64|128|256|512}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-48&#34;&gt;Figure 4.8&lt;/h3&gt;
+&lt;p&gt;Important parameters: &lt;code&gt;-prolong {1|2} [-disable-hor]&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;a-v03&#34;&gt;(a) V(0,3)&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# cell k and injection
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 2 -disable-hor -n {32|64|128|256|512|1024}
+# cell k and average
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 1 -disable-hor -n {32|64|128|256|512|1024}
+# cell k+1 and injection
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 2 -n {32|64|128|256|512|1024}
+# cell k+1 and average (final algo)
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,0,3 -prolong 1 -n {32|64|128|256|512|1024}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;b-v12&#34;&gt;(b) V(1,2)&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# cell k and injection
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 2 -disable-hor -n {32|64|128|256|512|1024}
+# cell k and average
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 1 -disable-hor -n {32|64|128|256|512|1024}
+# cell k+1 and injection
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 2 -n {32|64|128|256|512|1024}
+# cell k+1 and average (final algo)
+&amp;gt; fhhos4 -geo square -mesh stri -mesher inhouse -k 1 -s mg -cycle V,1,2 -prolong 1 -n {32|64|128|256|512|1024}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-49&#34;&gt;Figure 4.9&lt;/h3&gt;
+&lt;p&gt;Modify the value of the parameter &lt;code&gt;-heterog&lt;/code&gt; from 1e0 to 1e8:&lt;/p&gt;
+&lt;h4 id=&#34;a-heterogeneous-weighting&#34;&gt;(a) Heterogeneous weighting&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 0 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 1 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 2 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -k 3 -heterog {1e0-1e8}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;b-homogeneous-weighting&#34;&gt;(b) Homogeneous weighting&lt;/h4&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-disable-heterog-weight&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 0 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 1 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 2 -heterog {1e0-1e8}
+&amp;gt; fhhos4 -geo square4quadrants -mesh cart -mesher inhouse -n 64 -s mg -g 1 -cycle V,0,3 -disable-heterog-weight -k 3 -heterog {1e0-1e8}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-410&#34;&gt;Figure 4.10&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-fcs {0|1}&lt;/code&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;a-with-face-coarsening&#34;&gt;(a) With face coarsening&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 0 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 1 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 1 -k 3 -n {32|64|128|256|512}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;b-without-face-coarsening&#34;&gt;(b) Without face coarsening&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 0 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 1 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,0,3 -cs s -fcs 0 -k 3 -n {32|64|128|256|512}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-411&#34;&gt;Figure 4.11&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-cs b&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Custom Bey&#39;s refinement, V(0,6)
+&amp;gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,6 -n {8|16|32|64}
+# Custom Bey&#39;s refinement, V(0,8)
+&amp;gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,8 -n {8|16|32|64}
+# Custom Bey&#39;s refinement, V(0,10)
+&amp;gt; fhhos4 -geo cube -mesh tetra -mesher inhouse -k 1 -s mg -cs b -cycle V,0,10 -n {8|16|32|64}
+# Cartesian tet. refinement, V(0,6)
+&amp;gt; fhhos4 -geo cube -mesh stetra -mesher inhouse -k 1 -s mg -cs s -cycle V,0,6 -n {8|16|32|64}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-412&#34;&gt;Figure 4.12&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 0 -n {8|16|32} # diverges at n=32
+&amp;gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 1 -n {8|16|32}
+&amp;gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 2 -n {8|16|32}
+&amp;gt; fhhos4 -geo platewith4holes -s mg -cs b -cycle V,0,10 -k 3 -n {8|16|32}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-415&#34;&gt;Figure 4.15&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-cs r&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 0 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 1 -n {32|64|128|256|512|1024}
+&amp;gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 2 -n {32|64|128|256|512}
+&amp;gt; fhhos4 -geo squarecircle -s mg -cs r -cycle V,0,3 -k 3 -n {32|64|128|256|512}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
     <item>
-      <title>fhhos4 (pronounce &#39;phosphore&#39;)</title>
+      <title>fhhos4</title>
       <link>https://pmatalon.github.io/software/fhhos4/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/software/fhhos4/</guid>
-      <description>&lt;p&gt;fhhos4 stands for Fast HHO Solver for Research. It is an open-source code that solves diffusion problems with the Hybrid High-Order (HHO) discretizations.&lt;/p&gt;
+      <description>&lt;p&gt;fhhos4 (pronounce &amp;lsquo;phosphore&amp;rsquo;) stands for Fast HHO Solver for Research. It is an open-source code that solves diffusion problems with the Hybrid High-Order (HHO) discretizations.&lt;/p&gt;
+&lt;p&gt;Features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;solves diffusion problems with piecewise constant tensors&lt;/li&gt;
+&lt;li&gt;HHO and DG discretizations&lt;/li&gt;
+&lt;li&gt;high-order solutions&lt;/li&gt;
+&lt;li&gt;handles unstructured meshes&lt;/li&gt;
+&lt;li&gt;binded to the GMSH mesher&lt;/li&gt;
+&lt;li&gt;implements geometric and algebraic multigrid methods&lt;/li&gt;
+&lt;li&gt;exports linear systems&lt;/li&gt;
+&lt;li&gt;shared-memory parallelism&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

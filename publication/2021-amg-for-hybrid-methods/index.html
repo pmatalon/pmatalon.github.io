@@ -248,7 +248,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.481af39c39ffd87b2d14f39943e7c723.css" />
+  <link rel="stylesheet" href="/css/wowchemy.cd4c8766deea50c2e68145da698f1388.css" />
 
   
 
@@ -533,7 +533,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          <a class="nav-link " href="/#preprints"><span>Publications</span></a>
         </li>
 
         
@@ -752,7 +752,7 @@
     
   
   <a class="btn btn-outline-primary btn-page-header" href="https://hal.archives-ouvertes.fr/hal-03272468" target="_blank" rel="noopener">
-    <i class="ai ai-hal mr-1"></i>HAL</a>
+    <i class="ai ai-open-access mr-1"></i>HAL</a>
 
 
 </div>
@@ -793,7 +793,68 @@
 
     <div class="space-below"></div>
 
-    <div class="article-style"></div>
+    <div class="article-style"><h2 id="reproduction-of-the-numerical-experiments">Reproduction of the numerical experiments</h2>
+<p>The experiments can be reproduced through the open-source code <a href="/software/fhhos4" target="_blank">fhhos4</a>, release 1.0.</p>
+<h3 id="figure-42-and-table-42">Figure 4.2 and Table 4.2</h3>
+<p>Execute the following command line</p>
+<pre><code class="language-bash">&gt; fhhos4 [[test_case]] [[solver]]
+</code></pre>
+<p>where <code>[[test_case]]</code> corresponds to</p>
+<pre><code class="language-bash"># Cube-cart
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128
+# 'Cube-tet
+-geo cube -mesh tetra -k 0 -n 64
+# Complex-tet
+-geo platewith4holes -k 0 -n 16
+# Heterog1e8
+-geo square4quadrants -k 0 -n 2048 -heterog 1e8
+# Cube-cart-aniso100
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100
+# Cube-tet-aniso100
+-geo cube -mesh tetra -k 0 -n 64 -aniso 20
+</code></pre>
+<p>and <code>[[solver]]</code> corresponds to</p>
+<pre><code class="language-bash"># U-AMG
+-s fcguamg
+# C-AMG
+-s fcgaggregamg
+# AGMG
+-s agmg
+</code></pre>
+<h3 id="figure-44">Figure 4.4</h3>
+<pre><code class="language-bash">&gt; fhhos4 -geo cube -mesh tetra -k 0 -n {16|32|64|128} [[solver]]
+</code></pre>
+<h3 id="table-43">Table 4.3</h3>
+<pre><code class="language-bash">&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg
+</code></pre>
+<h3 id="table-44">Table 4.4</h3>
+<p>Important parameter: <code>-cs dpa</code>.</p>
+<pre><code class="language-bash">&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+</code></pre>
+<h3 id="table-45">Table 4.5</h3>
+<pre><code class="language-bash"># U-AMG (multiple coarsening)
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs mpa
+# U-AMG (double coarsening)
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+# C-AMG
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcgaggregamg
+# AGMG
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s agmg
+</code></pre>
+<h3 id="table-46">Table 4.6</h3>
+<p>Important parameter: <code>-coarsening-prolong {3|4|5|6}</code>.</p>
+<pre><code class="language-bash"># Cube-tet
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 6
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 4
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 5
+&gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 3
+# Cube-cart-aniso100
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 6
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 4
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 5
+&gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 3
+</code></pre>
+</div>
 
     
 
