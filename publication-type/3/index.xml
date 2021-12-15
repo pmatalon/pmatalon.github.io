@@ -31,27 +31,34 @@
 &amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 4 -n 256
 &amp;gt; fhhos4 -geo square -mesh cart -cs r -tol 1e-12 -s fcgmg -hp-config 2 -k 5 -n 128
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figures-6-and-7&#34;&gt;Figures 6 and 7&lt;/h3&gt;
+&lt;h3 id=&#34;figure-5&#34;&gt;Figure 5&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -s fcgmg -hp-config 1 -e-ogb 0 -f-ogb 0 -e-basis monomials -f-basis monomials -tol 1e-3 -k 1 -n 256
+&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -s fcgmg -hp-config 1 -e-ogb 0 -f-ogb 0 -e-basis monomials -f-basis monomials -tol 1e-3 -k 2 -n 128
+&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -s fcgmg -hp-config 1 -e-ogb 0 -f-ogb 0 -e-basis monomials -f-basis monomials -tol 1e-3 -k 3 -n 64 
+&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -s fcgmg -hp-config 1 -e-ogb 0 -f-ogb 0 -e-basis monomials -f-basis monomials -tol 1e-3 -k 4 -n 64 
+&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -s fcgmg -hp-config 1 -e-ogb 0 -f-ogb 0 -e-basis monomials -f-basis monomials -tol 1e-3 -k 5 -n 32 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figures-7-and-8&#34;&gt;Figures 7 and 8&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 6 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 7.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -mesh cart -cs r -k 5 -n 128 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-8-and-9&#34;&gt;Figure 8 and 9&lt;/h3&gt;
+&lt;h3 id=&#34;figure-9-and-10&#34;&gt;Figure 9 and 10&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 8 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 9.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square -cs r -k 5 -n 64 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-10-and-11&#34;&gt;Figure 10 and 11&lt;/h3&gt;
+&lt;h3 id=&#34;figure-11-and-12&#34;&gt;Figure 11 and 12&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 10 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 11.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo square4quadrants_tri_localref -tc kellogg -no-cache -cs r -k 5 -n 256 -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-12-and-13&#34;&gt;Figure 12 and 13&lt;/h3&gt;
+&lt;h3 id=&#34;figure-13-and-14&#34;&gt;Figure 13 and 14&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 12 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 13.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -k 3 -n 64 -mesh cart -mesher inhouse -cs s -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-14-and-15&#34;&gt;Figure 14 and 15&lt;/h3&gt;
+&lt;h3 id=&#34;figure-15-and-16&#34;&gt;Figure 15 and 16&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 14 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 15.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -k 3 -n 32 -mesh stetra -mesher inhouse -cs s -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-16-and-17&#34;&gt;Figure 16 and 17&lt;/h3&gt;
+&lt;h3 id=&#34;figure-17-and-18&#34;&gt;Figure 17 and 18&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;-s mg&lt;/code&gt; for Fig. 16 and &lt;code&gt;-s fcgmg&lt;/code&gt; for Fig. 17.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo genevawheel.geo -tc default -k 2 -n 32 -cs m -tol 1e-12 -s {mg|fcgmg} -hp-config {1|2|3|4}
 &lt;/code&gt;&lt;/pre&gt;
