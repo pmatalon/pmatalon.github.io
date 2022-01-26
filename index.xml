@@ -327,6 +327,7 @@ h_center = h*1e-4; # convergence
 &lt;li&gt;implements geometric and algebraic multigrid methods&lt;/li&gt;
 &lt;li&gt;exports linear systems&lt;/li&gt;
 &lt;li&gt;shared-memory parallelism&lt;/li&gt;
+&lt;li&gt;many parameters (various choices of polynomial bases, multigrid cycles, smoothers, coarsening strategies&amp;hellip;)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
