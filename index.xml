@@ -1,16 +1,122 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>P. Matalon</title>
+    <title>Pierre Matalon</title>
     <link>https://pmatalon.github.io/</link>
       <atom:link href="https://pmatalon.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <description>P. Matalon</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2121 Pierre Matalon</copyright><lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <description>Pierre Matalon</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2121 Pierre Matalon</copyright><lastBuildDate>Thu, 02 Jun 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
-      <title>P. Matalon</title>
+      <title>Pierre Matalon</title>
       <link>https://pmatalon.github.io/</link>
     </image>
+    
+    <item>
+      <title>Iterative solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order method</title>
+      <link>https://pmatalon.github.io/publication/2022-biharmonic-problem/</link>
+      <pubDate>Thu, 02 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://pmatalon.github.io/publication/2022-biharmonic-problem/</guid>
+      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
+&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.2.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;### Section 3.4.1 (error vs. h)
+```bash
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 16 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 32 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 64 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 128 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 256 -tol 1e-7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 16 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 32 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 64 -tol 1e-7
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 128 -tol 1e-9
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 256 -tol 1e-11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;section-341-preconditioner-convergence&#34;&gt;Section 3.4.1 (preconditioner convergence)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec no #no preconditioner
+&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec p -nbh-depth {2|4|6|8|10} #with preconditioner
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;heuristics&#34;&gt;Heuristics&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s fcguamg -mesh tri -cs r -k 3 -n 32 -tol 1e-8 -bihar-prec p -nbh-depth 2 -export iter -opt2 {0|2} 
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Algebraic multigrid preconditioner for statically condensed systems arising from lowest-order hybrid discretizations</title>
+      <link>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</link>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <guid>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</guid>
+      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
+&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;h3 id=&#34;figure-42-and-table-42&#34;&gt;Figure 4.2 and Table 4.2&lt;/h3&gt;
+&lt;p&gt;Execute the following command line&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 [[test_case]] [[solver]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;where &lt;code&gt;[[test_case]]&lt;/code&gt; corresponds to&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-cart
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128
+# Cube-tet
+-geo cube -mesh tetra -k 0 -n 64
+# Complex-tet
+-geo platewith4holes -k 0 -n 16
+# Heterog1e8
+-geo square4quadrants -k 0 -n 2048 -heterog 1e8
+# Cube-cart-aniso100
+-geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100
+# Cube-tet-aniso100
+-geo cube -mesh tetra -k 0 -n 64 -aniso 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;and &lt;code&gt;[[solver]]&lt;/code&gt; corresponds to&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG
+-s fcguamg
+# C-AMG
+-s fcgaggregamg
+# AGMG
+-s agmg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-44&#34;&gt;Figure 4.4&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n {16|32|64|128} [[solver]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;section-433-table-43-of-the-submitted-version&#34;&gt;Section 4.3.3 (Table 4.3 of the submitted version)&lt;/h3&gt;
+&lt;p&gt;Details of the adaptive multiple coarsening strategy of U-AMG for the test
+case Cube-tet.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;section-433-table-44-of-the-submitted-version&#34;&gt;Section 4.3.3 (Table 4.4 of the submitted version)&lt;/h3&gt;
+&lt;p&gt;Details of the fixed double coarsening strategy of U-AMG for the test case
+Cube-tet.
+Important parameter: &lt;code&gt;-cs dpa&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-43&#34;&gt;Table 4.3&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG (multiple coarsening)
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs mpa
+# U-AMG (double coarsening)
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
+# C-AMG
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcgaggregamg
+# AGMG
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s agmg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;table-44&#34;&gt;Table 4.4&lt;/h3&gt;
+&lt;p&gt;Important parameter: &lt;code&gt;-coarsening-prolong {3|4|5|6}&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-tet
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 6
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 4
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 5
+&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 3
+# Cube-cart-aniso100
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 6
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 4
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 5
+&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;figure-44-1&#34;&gt;Figure 4.4&lt;/h3&gt;
+&lt;p&gt;Same commands as for Table 4.4, also with the solver &lt;code&gt;-s fcgaggregamg&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>High-order multigrid strategies for HHO discretizations of elliptic equations</title>
@@ -84,81 +190,6 @@ h_center = h*1e-4; # convergence
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2021-phd-thesis/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Algebraic multigrid preconditioner for statically condensed systems arising from lowest-order hybrid discretizations</title>
-      <link>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      <guid>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</guid>
-      <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
-&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
-&lt;h3 id=&#34;figure-42-and-table-42&#34;&gt;Figure 4.2 and Table 4.2&lt;/h3&gt;
-&lt;p&gt;Execute the following command line&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 [[test_case]] [[solver]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;where &lt;code&gt;[[test_case]]&lt;/code&gt; corresponds to&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-cart
--geo cube -mesh cart -mesher inhouse -k 0 -n 128
-# Cube-tet
--geo cube -mesh tetra -k 0 -n 64
-# Complex-tet
--geo platewith4holes -k 0 -n 16
-# Heterog1e8
--geo square4quadrants -k 0 -n 2048 -heterog 1e8
-# Cube-cart-aniso100
--geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100
-# Cube-tet-aniso100
--geo cube -mesh tetra -k 0 -n 64 -aniso 20
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;and &lt;code&gt;[[solver]]&lt;/code&gt; corresponds to&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG
--s fcguamg
-# C-AMG
--s fcgaggregamg
-# AGMG
--s agmg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-44&#34;&gt;Figure 4.4&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n {16|32|64|128} [[solver]]
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;section-433-table-43-of-the-submitted-version&#34;&gt;Section 4.3.3 (Table 4.3 of the submitted version)&lt;/h3&gt;
-&lt;p&gt;Details of the adaptive multiple coarsening strategy of U-AMG for the test
-case Cube-tet.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;section-433-table-44-of-the-submitted-version&#34;&gt;Section 4.3.3 (Table 4.4 of the submitted version)&lt;/h3&gt;
-&lt;p&gt;Details of the fixed double coarsening strategy of U-AMG for the test case
-Cube-tet.
-Important parameter: &lt;code&gt;-cs dpa&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;table-43&#34;&gt;Table 4.3&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# U-AMG (multiple coarsening)
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs mpa
-# U-AMG (double coarsening)
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -cs dpa
-# C-AMG
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcgaggregamg
-# AGMG
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s agmg
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;table-44&#34;&gt;Table 4.4&lt;/h3&gt;
-&lt;p&gt;Important parameter: &lt;code&gt;-coarsening-prolong {3|4|5|6}&lt;/code&gt;.&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# Cube-tet
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 6
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 4
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 5
-&amp;gt; fhhos4 -geo cube -mesh tetra -k 0 -n 64 -s fcguamg -coarsening-prolong 3
-# Cube-cart-aniso100
-&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 6
-&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 4
-&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 5
-&amp;gt; fhhos4 -geo cube -mesh cart -mesher inhouse -k 0 -n 128 -aniso 100 -s fcguamg -coarsening-prolong 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;figure-44-1&#34;&gt;Figure 4.4&lt;/h3&gt;
-&lt;p&gt;Same commands as for Table 4.4, also with the solver &lt;code&gt;-s fcgaggregamg&lt;/code&gt;.&lt;/p&gt;
-</description>
     </item>
     
     <item>

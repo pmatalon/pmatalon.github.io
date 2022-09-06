@@ -30,7 +30,7 @@
   
     
   
-  <meta name="description" content="Postdoctoral researcher" />
+  <meta name="description" content="Pierre Matalon" />
 
   
   <link rel="alternate" hreflang="en-us" href="https://pmatalon.github.io/publication-type/3/" />
@@ -248,7 +248,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.cd4c8766deea50c2e68145da698f1388.css" />
+  <link rel="stylesheet" href="/css/wowchemy.ed77c2470fb7109fd7e12f289671f761.css" />
 
   
 
@@ -268,7 +268,7 @@
   
 
   
-    <link rel="alternate" href="/publication-type/3/index.xml" type="application/rss+xml" title="P. Matalon" />
+    <link rel="alternate" href="/publication-type/3/index.xml" type="application/rss+xml" title="Pierre Matalon" />
   
 
   
@@ -294,14 +294,14 @@
   
   <meta property="twitter:card" content="summary" />
   
-  <meta property="og:site_name" content="P. Matalon" />
+  <meta property="og:site_name" content="Pierre Matalon" />
   <meta property="og:url" content="https://pmatalon.github.io/publication-type/3/" />
-  <meta property="og:title" content="3 | P. Matalon" />
-  <meta property="og:description" content="Postdoctoral researcher" /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:title" content="3 | Pierre Matalon" />
+  <meta property="og:description" content="Pierre Matalon" /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-06-01T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2022-06-02T00:00:00&#43;00:00" />
     
   
 
@@ -317,7 +317,7 @@
 
 
 
-  <title>3 | P. Matalon</title>
+  <title>3 | Pierre Matalon</title>
 </head>
 
 
@@ -395,7 +395,7 @@
 
     
     <div class="d-none d-lg-inline-flex">
-      <a class="navbar-brand" href="/">P. Matalon</a>
+      <a class="navbar-brand" href="/">Pierre Matalon</a>
     </div>
     
 
@@ -408,7 +408,7 @@
 
     
     <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">P. Matalon</a>
+      <a class="navbar-brand" href="/">Pierre Matalon</a>
     </div>
     
 
@@ -638,13 +638,14 @@
   <div class="media-body">
 
     <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/publication/2021-amg-for-hybrid-methods/" >Algebraic multigrid preconditioner for statically condensed systems arising from lowest-order hybrid discretizations</a>
+      <a href="/publication/2022-biharmonic-problem/" >Iterative solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order method</a>
     </div>
 
     
-    <a href="/publication/2021-amg-for-hybrid-methods/"  class="summary-link">
+    <a href="/publication/2022-biharmonic-problem/"  class="summary-link">
       <div class="article-style">
-        We address the numerical solution of linear systems arising from the hybrid discretizations of second-order elliptic partial …
+        Reproduction of the numerical experiments The experiments can be reproduced through the open-source code fhhos4, release 1.2.
+### Section 3.4.1 (error vs. h)```bash&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 16 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 32 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 64 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 128 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 256 -tol 1e-7 &gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 16 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 32 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 64 -tol 1e-7&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 128 -tol 1e-9&gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 256 -tol 1e-11 Section 3.
       </div>
     </a>
     
@@ -658,59 +659,13 @@
         
 
   <span >
-      D. A. Di Pietro</span>, <span >
-      F. Hülsemann</span>, <span >
+      P. Antonietti</span>, <span >
       P. Matalon</span>, <span >
-      P. Mycek</span>, <span >
-      U. Rüde</span>
+      M. Verani</span>
       </div>
       
     </div>
 
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hal.archives-ouvertes.fr/hal-03272468" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-    </div>
     
 
   </div>
