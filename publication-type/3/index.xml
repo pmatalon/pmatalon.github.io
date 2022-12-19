@@ -19,26 +19,47 @@
       <guid>https://pmatalon.github.io/publication/2022-biharmonic-problem/</guid>
       <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
 &lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.2.&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;### Section 3.4.1 (error vs. h)
-```bash
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 16 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 32 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 64 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 128 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k 1 -n 256 -tol 1e-7
+&lt;h3 id=&#34;convergence-of-the-discrete-normal-derivative&#34;&gt;Convergence of the discrete normal derivative&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 16 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 32 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 64 -tol 1e-7
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 128 -tol 1e-9
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 10 -mesh cart -cs r -k 2 -n 256 -tol 1e-11
+&lt;h3 id=&#34;convergence-of-the-biharmonic-scheme&#34;&gt;Convergence of the biharmonic scheme&lt;/h3&gt;
+&lt;p&gt;Square, Cartesian mesh: use the arguments&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -kc 1
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;section-341-preconditioner-convergence&#34;&gt;Section 3.4.1 (preconditioner convergence)&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec no #no preconditioner
-&amp;gt; fhhos4 -pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec p -nbh-depth {2|4|6|8|10} #with preconditioner
+&lt;p&gt;k=0:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-k 0 -n  16 -tol 1e-7
+-k 0 -n  32 -tol 1e-7
+-k 0 -n  64 -tol 1e-7
+-k 0 -n 128 -tol 1e-7
+-k 0 -n 256 -tol 1e-7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;k=1:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-k 1 -n  16 -tol 1e-7
+-k 1 -n  32 -tol 1e-7
+-k 1 -n  64 -tol 1e-7
+-k 1 -n 128 -tol 1e-7
+-k 1 -n 256 -tol 1e-7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;k=2:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-k 2 -n  16 -tol 1e-7
+-k 2 -n  32 -tol 1e-7
+-k 2 -n  64 -tol 1e-7
+-k 2 -n 128 -tol 1e-9
+-k 2 -n 256 -tol 1e-11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;k=3:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-k 3 -n  16 -tol 1e-7
+-k 3 -n  32 -tol 1e-8
+-k 3 -n  64 -tol 1e-10
+-k 3 -n 128 -tol 1e-11
+-k 3 -n 256 -tol 1e-13 -bihar-prec s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;preconditioner-convergence&#34;&gt;Preconditioner convergence&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec no #no preconditioner
+-pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec p -nbh-depth {2|4|6|8|10} #with preconditioner
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;heuristics&#34;&gt;Heuristics&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 -pb bihar -geo square -source poly -s fcguamg -mesh tri -cs r -k 3 -n 32 -tol 1e-8 -bihar-prec p -nbh-depth 2 -export iter -opt2 {0|2} 
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-pb bihar -geo square -source poly -s fcguamg -mesh tri -cs r -k 3 -n 32 -tol 1e-8 -bihar-prec p -nbh-depth 2 -export iter -opt2 {0|2} 
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
