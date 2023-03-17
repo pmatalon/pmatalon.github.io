@@ -301,7 +301,7 @@
     <meta property="twitter:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2022-06-02T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2023-03-02T00:00:00&#43;00:00" />
     
   
 
@@ -645,7 +645,7 @@
     <a href="/publication/2022-biharmonic-problem/"  class="summary-link">
       <div class="article-style">
         Reproduction of the numerical experiments The experiments can be reproduced through the open-source code fhhos4, release 1.2.
-Convergence of the discrete normal derivative -pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256 Convergence of the biharmonic scheme Square, Cartesian mesh: use the arguments
+Convergence of the discrete normal derivative -pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256 Well-posedness # square cart -pb bihar -geo square -source sine -s ch -nbh-depth 8 -mesh cart -cs r -kc {0|1} -k {0|1|2|3|4} -n {8|16} # polygonal(2) -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -n 16 -kc {0|1} -k {0|1|2|3} -ut # polygonal(4) --&gt; retry until you get a max of 4 boundary faces per element -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 2 -n 32 -kc {0|1} -k {0|1|2|3} -ut -pb bihar -geo magnetism2 -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -kc 1 -k 5 -n 8 -export mesh -ut -fc-coplanar-tol 1e-5 -threads 0 -f-basis monomials -f-ogb 0 Convergence of the biharmonic scheme Square, Cartesian mesh: use the arguments
       </div>
     </a>
     
