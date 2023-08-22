@@ -30,8 +30,7 @@
   
     
   
-  <meta name="description" content="Reproduction of the numerical experiments The experiments can be reproduced through the open-source code fhhos4, release 1.2.
-Convergence of the discrete normal derivative -pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256 Well-posedness # square cart -pb bihar -geo square -source sine -s ch -nbh-depth 8 -mesh cart -cs r -kc {0|1} -k {0|1|2|3|4} -n {8|16} # polygonal(2) -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -n 16 -kc {0|1} -k {0|1|2|3} -ut # polygonal(4) --&gt; retry until you get a max of 4 boundary faces per element -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 2 -n 32 -kc {0|1} -k {0|1|2|3} -ut -pb bihar -geo magnetism2 -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -kc 1 -k 5 -n 8 -export mesh -ut -fc-coplanar-tol 1e-5 -threads 0 -f-basis monomials -f-ogb 0 Convergence of the biharmonic scheme Square, Cartesian mesh: use the arguments" />
+  <meta name="description" content="We consider the solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order (HHO) methods. The two resulting second-order elliptic problems can be decoupled via the introduction of a new unknown, corresponding to the boundary value of the solution of the first Laplacian problem. This technique yields a global linear problem that can be solved iteratively via a Krylov-type method. More precisely, at each iteration of the scheme, two second-order elliptic problems have to be solved, and a normal derivative on the boundary has to be computed. In this work, we specialize this scheme for the HHO discretization. To this aim, an explicit technique to compute the discrete normal derivative of an HHO solution of a Laplacian problem is proposed. Moreover, we show that the resulting discrete scheme is well-posed. Finally, a new preconditioner is designed to speed up the convergence of the Krylov method. Numerical experiments assessing the performance of the proposed iterative algorithm on both two- and three-dimensional test cases are presented." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://pmatalon.github.io/publication/2022-biharmonic-problem/" />
@@ -296,17 +295,16 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
   <meta property="og:site_name" content="Pierre Matalon" />
   <meta property="og:url" content="https://pmatalon.github.io/publication/2022-biharmonic-problem/" />
   <meta property="og:title" content="Iterative solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order method | Pierre Matalon" />
-  <meta property="og:description" content="Reproduction of the numerical experiments The experiments can be reproduced through the open-source code fhhos4, release 1.2.
-Convergence of the discrete normal derivative -pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256 Well-posedness # square cart -pb bihar -geo square -source sine -s ch -nbh-depth 8 -mesh cart -cs r -kc {0|1} -k {0|1|2|3|4} -n {8|16} # polygonal(2) -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -n 16 -kc {0|1} -k {0|1|2|3} -ut # polygonal(4) --&gt; retry until you get a max of 4 boundary faces per element -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 2 -n 32 -kc {0|1} -k {0|1|2|3} -ut -pb bihar -geo magnetism2 -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -kc 1 -k 5 -n 8 -export mesh -ut -fc-coplanar-tol 1e-5 -threads 0 -f-basis monomials -f-ogb 0 Convergence of the biharmonic scheme Square, Cartesian mesh: use the arguments" /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+  <meta property="og:description" content="We consider the solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order (HHO) methods. The two resulting second-order elliptic problems can be decoupled via the introduction of a new unknown, corresponding to the boundary value of the solution of the first Laplacian problem. This technique yields a global linear problem that can be solved iteratively via a Krylov-type method. More precisely, at each iteration of the scheme, two second-order elliptic problems have to be solved, and a normal derivative on the boundary has to be computed. In this work, we specialize this scheme for the HHO discretization. To this aim, an explicit technique to compute the discrete normal derivative of an HHO solution of a Laplacian problem is proposed. Moreover, we show that the resulting discrete scheme is well-posed. Finally, a new preconditioner is designed to speed up the convergence of the Krylov method. Numerical experiments assessing the performance of the proposed iterative algorithm on both two- and three-dimensional test cases are presented." /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
         property="article:published_time"
-        content="2023-03-01T00:00:00&#43;00:00"
+        content="2023-08-21T00:00:00&#43;00:00"
       />
     
-    <meta property="article:modified_time" content="2023-03-02T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2023-08-21T00:00:00&#43;00:00">
   
 
   
@@ -332,12 +330,12 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
   },
   "headline": "Iterative solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order method",
   
-  "datePublished": "2023-03-01T00:00:00Z",
-  "dateModified": "2023-03-02T00:00:00Z",
+  "datePublished": "2023-08-21T00:00:00Z",
+  "dateModified": "2023-08-21T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "P. Antonietti"
+    "name": "P. F. Antonietti"
   },
   
   "publisher": {
@@ -348,7 +346,7 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
       "url": "https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Reproduction of the numerical experiments The experiments can be reproduced through the open-source code fhhos4, release 1.2.\nConvergence of the discrete normal derivative -pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256 Well-posedness # square cart -pb bihar -geo square -source sine -s ch -nbh-depth 8 -mesh cart -cs r -kc {0|1} -k {0|1|2|3|4} -n {8|16} # polygonal(2) -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -n 16 -kc {0|1} -k {0|1|2|3} -ut # polygonal(4) --\u0026gt; retry until you get a max of 4 boundary faces per element -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 2 -n 32 -kc {0|1} -k {0|1|2|3} -ut -pb bihar -geo magnetism2 -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -kc 1 -k 5 -n 8 -export mesh -ut -fc-coplanar-tol 1e-5 -threads 0 -f-basis monomials -f-ogb 0 Convergence of the biharmonic scheme Square, Cartesian mesh: use the arguments"
+  "description": "We consider the solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order (HHO) methods. The two resulting second-order elliptic problems can be decoupled via the introduction of a new unknown, corresponding to the boundary value of the solution of the first Laplacian problem. This technique yields a global linear problem that can be solved iteratively via a Krylov-type method. More precisely, at each iteration of the scheme, two second-order elliptic problems have to be solved, and a normal derivative on the boundary has to be computed. In this work, we specialize this scheme for the HHO discretization. To this aim, an explicit technique to compute the discrete normal derivative of an HHO solution of a Laplacian problem is proposed. Moreover, we show that the resulting discrete scheme is well-posed. Finally, a new preconditioner is designed to speed up the convergence of the Krylov method. Numerical experiments assessing the performance of the proposed iterative algorithm on both two- and three-dimensional test cases are presented."
 }
 </script>
 
@@ -674,7 +672,7 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
     
 
   <span >
-      P. Antonietti</span>, <span >
+      P. F. Antonietti</span>, <span >
       P. Matalon</span>, <span >
       M. Verani</span>
   </div>
@@ -712,6 +710,56 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
 
 
 
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<a href="#" class="btn btn-outline-primary btn-page-header js-cite-modal"
+        data-filename="/publication/2022-biharmonic-problem/cite.bib">
+  Cite
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2308.10748.pdf" target="_blank" rel="noopener">
+    <i class="ai ai-open-access mr-1"></i>arXiv</a>
+
+
+</div>
+
 
   
 </div>
@@ -720,6 +768,9 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
 
   <div class="article-container">
 
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">We consider the solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order (HHO) methods. The two resulting second-order elliptic problems can be decoupled via the introduction of a new unknown, corresponding to the boundary value of the solution of the first Laplacian problem. This technique yields a global linear problem that can be solved iteratively via a Krylov-type method. More precisely, at each iteration of the scheme, two second-order elliptic problems have to be solved, and a normal derivative on the boundary has to be computed. In this work, we specialize this scheme for the HHO discretization. To this aim, an explicit technique to compute the discrete normal derivative of an HHO solution of a Laplacian problem is proposed. Moreover, we show that the resulting discrete scheme is well-posed. Finally, a new preconditioner is designed to speed up the convergence of the Krylov method. Numerical experiments assessing the performance of the proposed iterative algorithm on both two- and three-dimensional test cases are presented.</p>
     
 
     
@@ -747,7 +798,7 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
       <div class="col-md-10">
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">Working paper</div>
+          <div class="col-12 col-md-9">submitted</div>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -760,61 +811,44 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
     <div class="article-style"><h2 id="reproduction-of-the-numerical-experiments">Reproduction of the numerical experiments</h2>
 <p>The experiments can be reproduced through the open-source code <a href="/software/fhhos4" target="_blank">fhhos4</a>, release 1.2.</p>
 <h3 id="convergence-of-the-discrete-normal-derivative">Convergence of the discrete normal derivative</h3>
-<pre><code class="language-bash">-pb diff -geo square -source sine -s ch -mesh tri -normalder -k 0 -n 256
+<p>Fig. 2</p>
+<pre><code class="language-bash">-pb diff -geo square -source sine -s ch -mesh {cart|tri} -normalder -k {0|1|2|3} -n {16|32|64|128|256|512}
 </code></pre>
-<h3 id="well-posedness">Well-posedness</h3>
-<pre><code class="language-bash"># square cart
+<!-- 
+### Well-posedness
+```bash
+# square cart
 -pb bihar -geo square       -source sine -s ch -nbh-depth 8 -mesh cart -cs r -kc {0|1} -k {0|1|2|3|4} -n {8|16}
 # polygonal(2)
 -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -n 16 -kc {0|1} -k {0|1|2|3} -ut
-# polygonal(4) --&gt; retry until you get a max of 4 boundary faces per element
+# polygonal(4) -> retry until you get a max of 4 boundary faces per element
 -pb bihar -geo squarecircularhole -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 2 -n 32 -kc {0|1} -k {0|1|2|3} -ut
 -pb bihar -geo magnetism2         -tc default -s ch -bihar-prec p -nbh-depth 8 -mesh poly -cs r -polymesh-bfc c -polymesh-n-pass 1 -kc 1 -k 5 -n 8 -export mesh -ut -fc-coplanar-tol 1e-5 -threads 0 -f-basis monomials -f-ogb 0
-</code></pre>
+``` 
+-->
 <h3 id="convergence-of-the-biharmonic-scheme">Convergence of the biharmonic scheme</h3>
-<p>Square, Cartesian mesh: use the arguments</p>
-<pre><code class="language-bash">-pb bihar -geo square -source poly -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r
-</code></pre>
-<p>k=0:</p>
-<pre><code class="language-bash">-k 0 -n  16 -tol 1e-7
--k 0 -n  32 -tol 1e-7
--k 0 -n  64 -tol 1e-7
--k 0 -n 128 -tol 1e-7
--k 0 -n 256 -tol 1e-7
-</code></pre>
-<p>k=1:</p>
-<pre><code class="language-bash">-k 1 -n  16 -tol 1e-7
--k 1 -n  32 -tol 1e-7
--k 1 -n  64 -tol 1e-7
--k 1 -n 128 -tol 1e-7
--k 1 -n 256 -tol 1e-9
-</code></pre>
-<p>k=2:</p>
-<pre><code class="language-bash">-k 2 -n  16 -tol 1e-7
--k 2 -n  32 -tol 1e-7
--k 2 -n  64 -tol 1e-9
--k 2 -n 128 -tol 1e-10
--k 2 -n 256 -tol 1e-11
-</code></pre>
-<p>k=3:</p>
-<pre><code class="language-bash">-k 3 -n  16 -tol 1e-8
--k 3 -n  32 -tol 1e-9
--k 3 -n  64 -tol 1e-10
--k 3 -n 128 -tol 1e-11
--k 3 -n 256 -tol 1e-13
+<p>Fig. 3, 4, 5</p>
+<pre><code class="language-bash"># Cartesian mesh
+-pb bihar -geo square -source {exp|poly} -s ch -bihar-prec s -nbh-depth 8 -mesh cart -cs r -k {0|1|2|3} -n {16|32|64|128|256} -tol 1e-10
+# Polygonal mesh
+-pb bihar -geo square -source exp -s ch -bihar-prec s -nbh-depth 8 -bihar-prec-solver bicgstab -mesh poly -polymesh-init cart -polymesh-n-pass 1 -polymesh-fcs c -k {0|1|2|3} -n {16|32|64|128|256} -tol 1e-10
 </code></pre>
 <h3 id="preconditioner-convergence">Preconditioner convergence</h3>
+<p>Fig. 7</p>
 <pre><code class="language-bash">-pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -bihar-prec no #no preconditioner
 -pb bihar -geo square -source poly -s ch -mesh cart -cs r -k 1 -n 256 -tol 1e-14 -export iter -nbh-depth {2|4|6|8|10} #with preconditioner
 </code></pre>
 <h3 id="asymptotic-behaviour">Asymptotic behaviour</h3>
-<pre><code class="language-bash">-pb bihar -geo square -source poly -mesh cart -cs r -s ch -nbh-depth 8 -tol 1e-8 -k {0,1,2,3} -n {32,64,128,256,512} 
--pb bihar -geo cube -mesh cart -not-compute-errors -s fcguamg -hp-cs p_h -nbh-depth 3 -tol 1e-8 -k 0 -n {16,32,64,128} 
--pb bihar -geo magnetism2 -tc default -mesh poly -polymesh-bfc c -polymesh-n-pass 2 -s ch -nbh-depth 8 -tol 1e-8 -k 0 -n {64,128,256,512, 1024} 
+<p>Tables 1, 2, 3</p>
+<pre><code class="language-bash">-pb bihar -geo square -source exp -mesh cart -cs r -s ch -nbh-depth 8 -tol 1e-8 -bihar-prec {s|no} -k {0,1,2,3} -n {32,64,128,256,512} 
+-pb bihar -geo cube -source exp -mesh tetra -not-compute-errors -s fcguamg -hp-cs p_h -bihar-prec s -nbh-depth 2 -bihar-prec-solver bicgstab -tol 1e-5 -k 0 -n {8,16,32,64} 
 </code></pre>
-<h3 id="heuristics">Heuristics</h3>
-<pre><code class="language-bash">-pb bihar -geo square -source poly -s fcguamg -mesh tri -cs r -k 3 -n 32 -tol 1e-8 -bihar-prec p -nbh-depth 2 -export iter -opt2 {0|2} 
-</code></pre>
+<!-- -pb bihar -geo {disk|magnetism2} -tc default -mesh poly -polymesh-bfc c -polymesh-n-pass 2 -s ch -nbh-depth 8 -tol 1e-8 -k 0 -n {64,128,256,512,1024}  -->
+<!-- 
+### Heuristics
+```bash
+-pb bihar -geo square -source poly -s fcguamg -mesh tri -cs r -k 3 -n 32 -tol 1e-8 -bihar-prec p -nbh-depth 2 -export iter -opt2 {0|2} 
+``` -->
 </div>
 
     
@@ -981,7 +1015,7 @@ Convergence of the discrete normal derivative -pb diff -geo square -source sine 
 
   
   <p class="powered-by">
-    ©2121 Pierre Matalon
+    ©2023 Pierre Matalon
   </p>
   
 
