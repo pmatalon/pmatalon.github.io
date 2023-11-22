@@ -18,7 +18,7 @@
       <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2021-amg-for-hybrid-methods/</guid>
       <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
-&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;p&gt;The experiments can be reproduced with the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
 &lt;h3 id=&#34;figure-42-and-table-42&#34;&gt;Figure 4.2 and Table 4.2&lt;/h3&gt;
 &lt;p&gt;Execute the following command line&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;&amp;gt; fhhos4 [[test_case]] [[solver]]
@@ -93,7 +93,7 @@ Important parameter: &lt;code&gt;-cs dpa&lt;/code&gt;.&lt;/p&gt;
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2021-high-order-strategies/</guid>
       <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
-&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;p&gt;The experiments can be reproduced with the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4&#34; target=&#34;_blank&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
 &lt;p&gt;In the following command lines, the strategies are configured by the parameter &lt;code&gt;-hp-config {1|2|3|4}&lt;/code&gt;:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;-hp-config 1 # h-only
 -hp-config 2 # p-h
@@ -167,7 +167,7 @@ h_center = h*1e-4; # convergence
       <pubDate>Thu, 01 Apr 2021 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2020-mg-for-hho/</guid>
       <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
-&lt;p&gt;The experiments can be reproduced through the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4/&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
+&lt;p&gt;The experiments can be reproduced with the open-source code &lt;a href=&#34;https://pmatalon.github.io/software/fhhos4/&#34;&gt;fhhos4&lt;/a&gt;, release 1.0.&lt;/p&gt;
 &lt;h3 id=&#34;figure-41&#34;&gt;Figure 4.1&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# 2D cart
 &amp;gt; fhhos4 -geo square -mesh cart -mesher inhouse -s mg -cycle V,1,1 -k 0 -n {32|64|128|256|512|1024}
