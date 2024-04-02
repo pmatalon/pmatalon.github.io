@@ -5,7 +5,7 @@
     <link>https://pmatalon.github.io/</link>
       <atom:link href="https://pmatalon.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Pierre Matalon</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2023 Pierre Matalon</copyright><lastBuildDate>Tue, 24 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2023 Pierre Matalon</copyright><lastBuildDate>Tue, 02 Apr 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Pierre Matalon</title>
@@ -13,9 +13,9 @@
     </image>
     
     <item>
-      <title>Homogeneous multigrid for Hybrid High-Order methods</title>
+      <title>Homogeneous multigrid for hybrid discretizations: application to HHO methods</title>
       <link>https://pmatalon.github.io/publication/2023-hho-hdg-demo-framework/</link>
-      <pubDate>Tue, 24 Oct 2023 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Apr 2024 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2023-hho-hdg-demo-framework/</guid>
       <description>&lt;h2 id=&#34;reproduction-of-the-numerical-experiments&#34;&gt;Reproduction of the numerical experiments&lt;/h2&gt;
 &lt;h3 id=&#34;square&#34;&gt;Square&lt;/h3&gt;
@@ -243,6 +243,14 @@ h_center = h*1e-4; # convergence
       <link>https://pmatalon.github.io/publication/2021-phd-thesis/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       <guid>https://pmatalon.github.io/publication/2021-phd-thesis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>samurai</title>
+      <link>https://pmatalon.github.io/software/samurai/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://pmatalon.github.io/software/samurai/</guid>
       <description></description>
     </item>
     
