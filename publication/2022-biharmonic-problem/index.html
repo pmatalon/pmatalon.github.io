@@ -873,7 +873,7 @@
 <h3 id="asymptotic-behaviour">Asymptotic behaviour</h3>
 <p>Tables 1, 2, 3</p>
 <pre><code class="language-bash">-pb bihar -geo square -source exp -mesh cart -cs r -s ch -nbh-depth 8 -tol 1e-8 -bihar-prec {s|no} -k {0,1,2,3} -n {32,64,128,256,512} 
--pb bihar -geo cube -source exp -mesh tetra -not-compute-errors -s fcguamg -hp-cs p_h -bihar-prec s -nbh-depth 2 -bihar-prec-solver bicgstab -tol 1e-5 -k 0 -n {8,16,32,64} 
+-pb bihar -geo cube -source exp -mesh tetra -not-compute-errors -s fcguamg -hp-cs p_h -nbh-depth 2 -bihar-prec-solver bicgstab -tol 1e-8 -k 0 -bihar-prec {s|no} -n {8,16,32,64} 
 </code></pre>
 <!-- -pb bihar -geo {disk|magnetism2} -tc default -mesh poly -polymesh-bfc c -polymesh-n-pass 2 -s ch -nbh-depth 8 -tol 1e-8 -k 0 -n {64,128,256,512,1024}  -->
 <!-- 
