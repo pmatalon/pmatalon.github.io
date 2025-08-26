@@ -1,2731 +1,439 @@
-<!DOCTYPE html><html lang="en-us" >
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  
-  
-  
-    <meta name="generator" content="Wowchemy 5.3.0 for Hugo" />
-  
-
-  
-
-  
-  
-  
-  
-  
-    
-    
-    
-  
-  
-
-  <meta name="author" content="Pierre Matalon" />
-
-  
-  
-  
-    
-  
-  <meta name="description" content="Pierre Matalon" />
-
-  
-  <link rel="alternate" hreflang="en-us" href="https://pmatalon.github.io/" />
-
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-  
-  
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-
-  
-  
-  
-    <meta name="theme-color" content="#1565c0" />
-  
-
-  
-  
-    
-    <script src="/js/mathjax-config.js"></script>
-  
-
-  
-
-  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
-
-  
-  
-  
-    
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous" media="print" onload="this.media='all'">
-    
-
-    
-    
-    
-    
-      
-      
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-
-    
-    
-    
-      
-    
-    
-      
-      
-        
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
-        
-      
-    
-
-    
-    
-    
-
-    
-
-    
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-      
-      
-
-      
-      
-
-      
-    
-  
-
-  
-  
-  
-    
-      
-      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
-    
-  
-
-  
-  
-  
-  
-  
-  <link rel="stylesheet" href="/css/wowchemy.164ba371c80d31e2df1ea26f89582edc.css" />
-
-  
-
-
-
-  
-
-  
-
-  
-
-
-
-
-  
-  
-  
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
-
-  
-    <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Pierre Matalon" />
-  
-
-  
-    <link rel="manifest" href="/manifest.webmanifest" />
-  
-
-  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
-
-  <link rel="canonical" href="https://pmatalon.github.io/" />
-
-  
-  
-  
-  
-  
-  
-  
-  
-    
-    
-  
-  
-  <meta property="twitter:card" content="summary" />
-  
-  <meta property="og:site_name" content="Pierre Matalon" />
-  <meta property="og:url" content="https://pmatalon.github.io/" />
-  <meta property="og:title" content="Pierre Matalon" />
-  <meta property="og:description" content="Pierre Matalon" /><meta property="og:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://pmatalon.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
-  
-    
-      <meta property="og:updated_time" content="2024-07-10T00:00:00&#43;00:00" />
-    
-  
-
-  
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://pmatalon.github.io/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  },
-  "url": "https://pmatalon.github.io/"
-}
-</script>
-
-
-  
-
-  
-
-  
-
-
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pierre Matalon</title>
+
+  <!-- picocss 2 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+  <!-- feather -->
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+    integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"
+    integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6"
+    crossorigin="anonymous"></script>
+
+  <!-- To automatically render math in text elements, include the auto-render extension: -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"
+    integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+  <!-- Roboto font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <style>
+    :root {
+      --pico-font-family: 'Roboto', sans-serif;
+      --pico-font-size: 100%;
+    }
+
+    body>header {
+      backdrop-filter: blur(1rem);
+      background-color: var(--pico-card-background-color);
+      /* box-shadow: var(--pico-card-box-shadow); */
+      padding:0;
+    }
+
+    body>header h1{
+      margin-bottom: 0;
+    }
+
+    /* .last-name {
+      font-variant: small-caps;
+    } */
+
+    body>main {
+      min-height: calc(100vh - 17rem);
+    }
+
+    body>footer {
+      backdrop-filter: blur(1rem);
+      background-color: var(--pico-card-background-color);
+      box-shadow: var(--pico-card-box-shadow);
+    }
+
+
+    
+    .flex {
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+    }
+
+    #about_me {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    #about_me h1 {
+      margin-bottom: 0;
+    }
+    
+    #about_me #my_picture {
+      max-width: 150px;
+      max-height: 150px;
+      border-radius: 50%;
+      /* transition-duration: 250ms; */
+    }
+    /* #my_picture:hover {
+      border-radius: 12.5%;
+    } */
+
+    #about_me ul {
+      padding-left: 0;
+      margin-bottom: 0;
+      gap: 1em;
+      display: flex;
+      justify-content: center;
+    }
+
+    #job {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    #job #cmap {
+      text-align: center;
+    }
+
+    #interests {
+      display: flex;
+      align-items: center;
+    }
+
+    #hal ul li {
+      vertical-align: text-bottom;
+    }
+
+    .hal-title {
+      display: inline-block;
+      width: 75%;
+      font-weight: bold;
+      vertical-align: top;
+    }
+
+    .hal-date {
+      width: 20%;
+      text-align: right;
+    }
+
+    .hal-authors {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 0.5ex;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+
+    .hal-journal {
+      width: 100%;
+      font-style: italic;
+    }
+    
+    .link-list {
+      display:flex;
+      padding: 0;
+      gap: 10px;
+    }
+    .link-list li {
+      display: inline-block;
+    }
+    .link-list a {
+      border: 1px solid currentColor;
+      border-radius: .3rem;
+      font-size: 0.9rem;
+      padding: 3px .4rem;
+      text-decoration: none;
+      line-height: 1;
+    }
+    .link-list .ai {
+      padding-right: 3px;
+    }
+
+    .ai-open-access {
+      color: green;
+    }
+    .ai-closed-access {
+      color: #c70039;
+    }
+
+    #about_me ul li {
+      display: inline-block;
+      list-style: none;
+      padding-left: 0;
+    }
+    
+  </style>
 </head>
 
-
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main" class="page-wrapper   "  >
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <script src="/js/wowchemy-init.min.1d309c6b3f55725f8869af2651084961.js"></script>
-
-  
-
-
-<aside class="search-modal" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
+<body>
+  <header>
+    <nav>
+      <div class="container">
+        <nav>
+          <!-- <ul>
+            <li>
+              <h1>Pierre Matalon</h1>
+            </li>
+          </ul> -->
+          <!-- <a class="contrast" aria-label="Turn off dark mode" id="switcher" data-discover="true"><i data-feather="moon"></i></a> -->
+        </nav>
       </div>
+    </nav>
+  </header>
+  <main class="container">
 
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
-        aria-label="Search...">
-        
+    <article>
+      <div class="flex">
+        <section id="about_me">
+          <h1>Pierre Matalon</h1>
+          <img src="picture.jpg" id="my_picture" />
+          <a href="mailto:pierre.matalon@polytechnique.edu">pierre.matalon@polytechnique.edu</a>
+          <ul>
+            <li>
+              <a href="https://github.com/pmatalon"><img src="icons/github-mark.svg" alt="GitHub" width="30" height="30"/></a>
+            </li>
+            <!-- <li>
+              <a href="https://hal.science/search/index/?q=*&authIdPerson_i=181259"><i data-feather="book"></i> HAL</a>
+            </li> -->
+            <li>
+              <a href="https://orcid.org/0000-0002-4288-2289"><img src="icons/ORCID-iD_icon_vector.svg" alt="ORCID iD"/></a>
+            </li>
+          </ul>
+        </section>
+        <section id="job">
+          <span>Research engineer</span>
+          <span id="cmap">Centre de Mathématiques Appliquées (CMAP)<br/>École Polytechnique</span>
+        </section>
+        <section id="interests">
+          <!-- <h3>Interests</h3> -->
+          <ul>
+            <li>Scientific computing</li>
+            <li>High Performance Computing</li>
+            <li>Numerical analysis</li>
+            <li>Linear solvers</li>
+            <li>Multigrid methods</li>
+          </ul>
+        </section>
       </div>
+    </article>
 
-      
-      
+    <article id="hal">
+      <!-- <header>
+        <h2>Mes publications</h2>
+        </header>  -->
+      <h3>Preprints</h3>
+      <ol class="UNDEFINED" reversed></ol>
 
-      
+      <h3>Journal papers</h3>
+      <ol class="ART" reversed></ol>
 
-    </section>
-    <section class="section-search-results">
+      <h3>Thesis</h3>
+      <ol class="THESE" reversed></ol>
 
-      <div id="search-hits">
-        
-      </div>
+      <!-- <h3>Mes posters</h3>
+      <ul class="POSTER"></ul> -->
 
-    </section>
-  </div>
-</aside>
+      <!-- <h3>Software</h3>
+      <ul class="SOFTWARE"></ul> -->
+    </article>
 
+    <article>
+      <h3>Software</h3>
+      <ul>
+        <li><a href="https://github.com/hpc-maths/samurai" target="_blank">samurai</a> - Structured Adaptive mesh and MUlti-Resolution based on Algebra of Intervals</li>
+        <li><a href="https://github.com/pmatalon/fhhos4/" target="_blank">fhhos4</a> - Fast HHO Solver 4 Research</li>
+        <li><a href="https://github.com/hpc-maths/krylov4r" target="_blank">krylov4r</a> - Krylov methods for research</li>
+    </article>
 
+    <!-- <article>
+      <h2>Des trucs</h2>
+      <p>
+        J'ai entendu une fois en cours :
+        $$e^{i\pi} + 1 = 0$$
+        et j'ai trouvé ça beau.
 
-  <div class="page-header">
-    
+      </p>
+    </article>-->
 
-
-
-
-
-
-
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container-xl">
-
-    
-
-    
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    
-
-    
-
-    
-    
-    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
-
-      
-      <ul class="navbar-nav d-md-inline-flex">
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#about" data-target="#about"><span>Home</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#preprints" data-target="#preprints"><span>Publications</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#software" data-target="#software"><span>Software</span></a>
-        </li>
-
-        
-        
-
-        
-
-        
-        
-        
-          
-        
-
-        
-
-        
-        
-        
-        
-
-        
-          
-            
-            
-          
-          
-            
-            
-            
-              
-            
-            
-          
-        
-
-        <li class="nav-item">
-          <a class="nav-link " href="/#experience" data-target="#experience"><span>Experience</span></a>
-        </li>
-
-        
-        
-
-      
-
-        
-      </ul>
+  </main>
+  <!-- <footer>
+    <div class="container grid">
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">mon labo</a></li>
+            <li><a href="#">mon compte OnlyFan</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="#">contact</a></li>
+            <li><a href="#">mon labo</a></li>
+            <li><a href="#">mon compte OnlyFan</a></li>
+          </ul>
+        </nav>
+      </aside>
     </div>
+  </footer> -->
 
-    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+  <script>
+    // init feather (icons)
+    feather.replace();
 
-      
-      
-        
-      
+    // switch dark/light theme
+    // const html = document.querySelector("html");
+    // const themes = { true: { 'theme': "light", 'icon': "sun" }, false: { 'theme': "dark", 'icon': "moon" } };
+    // let light_theme = html.getAttribute("data-theme") == "light";
 
-      
-      
+    // const switcher = document.querySelector("#switcher");
+    // switcher.addEventListener("click", ev => {
+    //   light_theme = !light_theme;
+    //   html.setAttribute("data-theme", themes[light_theme].theme);
+    //   switcher.innerHTML = feather.icons[themes[light_theme].icon].toSvg();
+    // });
 
-      
-      
-      <li class="nav-item dropdown theme-dropdown">
-        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
-          <i class="fas fa-moon" aria-hidden="true"></i>
-        </a>
-        <div class="dropdown-menu">
-          <a href="#" class="dropdown-item js-set-theme-light">
-            <span>Light</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-dark">
-            <span>Dark</span>
-          </a>
-          <a href="#" class="dropdown-item js-set-theme-auto">
-            <span>Automatic</span>
-          </a>
-        </div>
-      </li>
-      
+    // HAL API
+    let hal_dom = document.querySelector("#hal ul");
 
-      
-      
-
-    </ul>
-
-  </div>
-</nav>
-
-
-  </div>
-
-  <div class="page-body">
+    // on récupère tous les champs de la base qu'on veut, voir https://api.archives-ouvertes.fr/docs/search/?schema=fields pour plus d'info
     
-
-
-
-
-
-
-
-
-
-
-
-  
-<span class="js-widget-page d-none"></span>
-
-
-
-
-
-  
-  
-  
-  
-
-
-
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="about" class="home-section wg-about  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
     
+    const author = "Pierre+Matalon";
+    let url = `https://api.archives-ouvertes.fr/search/?q=authFullName_s:%22${author}%22&fl=doiId_s,label_bibtex,title_s,arxivId_s,keyword_s,authFullName_s,authLastName_s,uri_s,releasedDate_s,publicationDate_s,authIdHal_s,journalTitle_s,halId_s,docType_s&sort=releasedDate_s desc`;
+    
+    //const author_hal_id = "181259";
+    //let url = `https://api.archives-ouvertes.fr/search/?q=authIdPerson_i:%22${author_hal_id}%22&fl=doiId_s,label_bibtex,title_s,arxivId_s,keyword_s,authFullName_s,authLastName_s,uri_s,releasedDate_s,publicationDate_s,authIdHal_s,journalTitle_s,halId_s,docType_s&sort=releasedDate_s desc`;
+    
+    //const author_hal_id = "pmatalon";
+    //let url = `https://api.archives-ouvertes.fr/search/?q=authIdHal_s:%22${author_hal_id}%22&fl=doiId_s,label_bibtex,title_s,arxivId_s,keyword_s,authFullName_s,authLastName_s,uri_s,releasedDate_s,publicationDate_s,authIdHal_s,journalTitle_s,halId_s,docType_s&sort=releasedDate_s desc`;
 
-      
+    fetch(url)
+      .then(res => res.json())
+      .then(out => {
+        out.response.docs.map(hal_item => {
+
+          //console.log(hal_item.openAccess_bool);
+
+          let article_item = document.createElement('li');
+          article_item.id = hal_item.halId_s;
+          article_item.classList.add(hal_item.docType_s);
+
+          // title of HAL item
+          let title_link = document.createElement('span');
+          title_link.classList.add("hal-title");
+          //title_link.href = (hal_item.doiId_s === undefined) ? hal_item.uri_s : `https://doi.org/${hal_item.doiId_s}`;
+          title_link.innerText = hal_item.title_s[0];
+          article_item.appendChild(title_link);
 
 
+          // liste des auteurs
+          let authors_span = document.createElement('span');
+          authors_span.classList.add("hal-authors");
+          let authorNames = hal_item.authLastName_s.map((auth_lastname, i) => {
+            let firstnames = hal_item.authFullName_s[i]
+              .replace(auth_lastname, '')
+              .split(' ')
+              .filter(e => String(e).trim())
+              .map(name => name.substring(0, 1))
+              .join(". ");
+            return `${firstnames}. ${auth_lastname}`;
+          }).join(", ");
+          authors_span.textContent = authorNames;
+          article_item.appendChild(authors_span);
 
+          // ajout du nom du journal
+          // attention un poster n'a pas de nom de journal, un prépublish non plus, etc.
+          if (hal_item.docType_s == "THESE") {
+            hal_item.journalTitle_s = "PhD thesis";
+          }
+          if ('journalTitle_s' in hal_item) {
+            let journal_span = document.createElement('span');
+            journal_span.classList.add("hal-journal");
+            journal_span.appendChild(document.createTextNode(hal_item.journalTitle_s));
+            journal_span.appendChild(document.createTextNode(", "));
+            article_item.appendChild(journal_span);
+          }
 
-  
+          // ajout de la date
+          date = ('publicationDate_s' in hal_item) ? hal_item.publicationDate_s : hal_item.releasedDate_s;
+          let date_span = document.createElement('span');
+          date_span.classList.add("hal-date");
+          date_span.appendChild(document.createTextNode(date.split('-')[0]));
+          date_span.dateTime = date;
+          article_item.appendChild(date_span);
 
-
-
-
-
-
-
-
-
-
-<div class="row">
-  <div class="col-12 col-lg-4">
-    <div id="profile">
-
-      
-      
-      <img class="avatar avatar-circle"
-           width="270" height="270"
-           src="/authors/admin/avatar_hubae45d4577951ac6bf129939f1cffe75_1168797_270x270_fill_q75_lanczos_center.jpg" alt="Pierre Matalon">
-      
-
-      <div class="portrait-title">
-        <h2>Pierre Matalon</h2>
-        <h3>Research engineer</h3>
-
-        
-        <h3>
-          <a href="https://portail.polytechnique.edu/cmap/" target="_blank" rel="noopener">
-          <span>CMAP - Ecole polytechnique</span>
-          </a>
-        </h3>
-        
-        <h3>
-          <a href="mailto:pierre.matalon@polytechnique.edu" target="_blank" rel="noopener">
-          <span>pierre.matalon@polytechnique.edu</span>
-          </a>
-        </h3>
-        
-      </div>
-
-      <ul class="network-icon" aria-hidden="true">
-        
-        
-        
-        
-        
-        
-        
-        
+          // liste des liens
+          let links_list = document.createElement('ul');
+          links_list.classList.add("link-list");
+          {
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            // let icon = document.createElement('span');
+            // icon.classList.add("ai");
+            // icon.classList.add("ai-open-access");
+            // a.appendChild(icon);
+            a.href = hal_item.uri_s;
+            a.innerHTML = "<i class='ai ai-open-access'></i>HAL";
+            a.setAttribute('target', '_blank');
+            li.appendChild(a);
+            links_list.appendChild(li);
+          }
+          if ( hal_item.doiId_s !== undefined ) {
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.href = `https://doi.org/${hal_item.doiId_s}`;
+            if (hal_item.doiId_s == "10.1002/num.70023" || hal_item.doiId_s == "10.1002/nme.6803" || hal_item.doiId_s == "10.1016/j.camwa.2024.07.018" || hal_item.doiId_s == "doi/10.1002/nla.2456") {
+              a.innerHTML = "<i class='ai ai-open-access'></i>DOI";
+            }
+            else {
+              a.innerHTML = "<i class='ai ai-closed-access'></i>DOI";
+            }
+            //a.innerText = "DOI";
+            a.setAttribute('target', '_blank');
+            li.appendChild(a);
+            links_list.appendChild(li);
+          }
+          if ( hal_item.arxivId_s !== undefined ) {
+            let li = document.createElement('li');
+            let a = document.createElement('a');
+            a.href = `https://arxiv.org/pdf/${hal_item.arxivId_s}`;
+            a.innerHTML = "<i class='ai ai-open-access'></i>arXiv";
+            a.setAttribute('target', '_blank');
+            li.appendChild(a);
+            links_list.appendChild(li);
+          }
+          article_item.appendChild(links_list);
           
         
-        <li>
-          <a href="https://scholar.google.fr/citations?user=2BPu-jEAAAAJ&amp;hl=fr" target="_blank" rel="noopener" aria-label="google-scholar">
-            <i class="ai ai-google-scholar big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="https://orcid.org/0000-0002-4288-2289" target="_blank" rel="noopener" aria-label="orcid">
-            <i class="ai ai-orcid big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="https://www.researchgate.net/profile/Pierre-Matalon-2" target="_blank" rel="noopener" aria-label="researchgate">
-            <i class="ai ai-researchgate big-icon"></i>
-          </a>
-        </li>
-        
-        
-        
-        
-        
-        
-        
-        
-          
-        
-        <li>
-          <a href="https://publons.com/researcher/4589576/pierre-matalon/" target="_blank" rel="noopener" aria-label="publons">
-            <i class="ai ai-publons big-icon"></i>
-          </a>
-        </li>
-        
-      </ul>
-
-    </div>
-  </div>
-  <div class="col-12 col-lg-8">
-
-    
-    
-
-    <div class="article-style">
-      <p>Development of fast solvers for statically condensed linear systems arising from Hybrid High-Order (HHO) discretizations.</p>
-<p>
-  <i class="fas fa-download  pr-1 fa-fw"></i> Download <a href="/uploads/CV_Pierre_Matalon.pdf" target="_blank">CV</a> (2023).</p>
-
-    </div>
-
-    <div class="row">
-
-      
-      <div class="col-md-5">
-        <div class="section-subheading">Interests</div>
-        <ul class="ul-interests mb-0">
-          
-          <li>Scientific computing</li>
-          
-          <li>High Performance Computing</li>
-          
-          <li>Numerical analysis</li>
-          
-          <li>Linear solvers</li>
-          
-          <li>Multigrid methods</li>
-          
-        </ul>
-      </div>
-      
-
-      
-
-    </div>
-  </div>
-</div>
-
-
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="preprints" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Preprints</h1>
-            <p class="mt-1">and working papers</p>
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-<div class="col-12 ">
-
-  
-
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      D. A. Di Pietro</span>, <span >
-      Z. Dong</span>, <span >
-      G. Kanschat</span>, <span >
-      P. Matalon</span>, <span >
-      A. Rupp</span>.
-  </span>
-  <a href="/publication/2023-hho-hdg-demo-framework/">Homogeneous multigrid for hybrid discretizations: application to HHO methods</a>.
-  submitted,
-  2024.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2023-hho-hdg-demo-framework/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://inria.hal.science/hal-04518103/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2403.15858.pdf" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>arXiv</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-
-  
-  
-  
-
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="publications" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Publications</h1>
-            <p class="mt-1">in peer-reviewed journal papers</p>
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-<div class="col-12 ">
-
-  
-
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      P. F. Antonietti</span>, <span >
-      P. Matalon</span>, <span >
-      M. Verani</span>.
-  </span>
-  <a href="/publication/2022-biharmonic-problem/">Iterative solution to the biharmonic equation in mixed form discretized by the Hybrid High-Order method</a>.
-  <em>Comput. Math. Appl.</em>,
-  2024.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2022-biharmonic-problem/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1016/j.camwa.2024.07.018" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>DOI</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://arxiv.org/pdf/2308.10748.pdf" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>arXiv</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      D. A. Di Pietro</span>, <span >
-      F. Hülsemann</span>, <span >
-      P. Matalon</span>, <span >
-      P. Mycek</span>, <span >
-      U. Rüde</span>.
-  </span>
-  <a href="/publication/2021-amg-for-hybrid-methods/">Algebraic multigrid preconditioner for statically condensed systems arising from lowest-order hybrid discretizations</a>.
-  <em>SIAM J. Sci. Comput.</em>,
-  2023.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2021-amg-for-hybrid-methods/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1137/21M1429849" target="_blank" rel="noopener">
-    <i class="ai ai-closed-access mr-1"></i>DOI</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hal.archives-ouvertes.fr/hal-03272468/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      D. A. Di Pietro</span>, <span >
-      P. Matalon</span>, <span >
-      P. Mycek</span>, <span >
-      U. Rüde</span>.
-  </span>
-  <a href="/publication/2021-high-order-strategies/">High-order multigrid strategies for HHO discretizations of elliptic equations</a>.
-  <em>Numer. Linear Algebra Appl.</em>,
-  2023.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2021-high-order-strategies/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1002/nla.2456" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>DOI</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hal.archives-ouvertes.fr/hal-03531293/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      D. A. Di Pietro</span>, <span >
-      F. Hülsemann</span>, <span >
-      P. Matalon</span>, <span >
-      P. Mycek</span>, <span >
-      U. Rüde</span>, <span >
-      D. Ruiz</span>.
-  </span>
-  <a href="/publication/2021-non-nested-mg-for-hho/">Towards robust, fast solutions of elliptic equations on complex domains through hybrid high‐order discretizations and non‐nested multigrid methods</a>.
-  <em>Int. J. Numer. Methods Eng.</em>,
-  2021.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2021-non-nested-mg-for-hho/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1002/nme.6803" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>DOI</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hal.archives-ouvertes.fr/hal-03163476/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      D. A. Di Pietro</span>, <span >
-      F. Hülsemann</span>, <span >
-      P. Matalon</span>, <span >
-      P. Mycek</span>, <span >
-      U. Rüde</span>, <span >
-      D. Ruiz</span>.
-  </span>
-  <a href="/publication/2020-mg-for-hho/">An h-multigrid method for Hybrid High-Order discretizations</a>.
-  <em>SIAM J. Sci. Comput.</em>,
-  2021.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-<a href="#" class="btn btn-outline-primary btn-page-header btn-sm js-cite-modal"
-        data-filename="/publication/2020-mg-for-hho/cite.bib">
-  Cite
-</a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://doi.org/10.1137/20M1342471" target="_blank" rel="noopener">
-    <i class="ai ai-closed-access mr-1"></i>DOI</a>
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://hal.archives-ouvertes.fr/hal-02434411/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-
-  
-  
-  
-
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="theses" class="home-section wg-pages  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Thesis</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-<div class="col-12 ">
-
-  
-
-  
-    
-      
-
-<div class="pub-list-item" style="margin-bottom: 1rem">
-  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
-
-  
-  
-
-  <span class="article-metadata li-cite-author">
-    
-
-  <span >
-      P. Matalon</span>.
-  </span>
-  <a href="/publication/2021-phd-thesis/">Fast solvers for robust discretizations in computational fluid dynamics</a>.
-  <em>Ph.D. thesis</em>,
-  2021.
-
-  
-  <div class="btn-links">
-    
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://tel.archives-ouvertes.fr/tel-03401691/document" target="_blank" rel="noopener">
-    <i class="ai ai-open-access mr-1"></i>HAL</a>
-
-
-  </div>
-  
-
-  
-</div>
-
-    
-  
-
-  
-  
-  
-
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="software" class="home-section wg-portfolio  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Software</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-
-
-
-<div class="col-12 ">
-
-  
-
-  
-
-  <div class=" row js-layout-row ">
-
-    
-    
-      
-    
-
-    
-
-      
-      
-      
-        
-        
-      
-
-      
-        
-
-
-<div class="col-12 isotope-item ">
-  
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="https://hpc-math-samurai.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">samurai</a>
-    </div>
-
-    
-    <a href="https://hpc-math-samurai.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener" class="summary-link">
-      <div class="article-style">
-        Structured Adaptive mesh and MUlti-Resolution based on Algebra of Intervals
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Sep 1, 2021
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/hpc-maths/samurai" target="_blank" rel="noopener">
-    <i class="fab fa-github mr-1"></i>Code</a>
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-</div>
-
-      
-
-    
-
-      
-      
-      
-
-      
-        
-
-
-<div class="col-12 isotope-item ">
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <div class="section-subheading article-title mb-0 mt-0">
-      <a href="/software/fhhos4/" >fhhos4</a>
-    </div>
-
-    
-    <a href="/software/fhhos4/"  class="summary-link">
-      <div class="article-style">
-        Fast HHO solver for research
-      </div>
-    </a>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Sep 1, 2018
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-    <div class="btn-links">
-      
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header btn-sm" href="https://github.com/pmatalon/fhhos4/" target="_blank" rel="noopener">
-    <i class="fab fa-github mr-1"></i>Code</a>
-
-
-    </div>
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-</div>
-
-      
-
-    
-  </div>
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-  <section id="experience" class="home-section wg-experience  "  >
-   <div class="home-section-bg " >
-     
-   </div>
-    <div class="container">
-
-    
-      <div class="row  justify-content-center">
-      
-        
-          <div class="section-heading col-12 mb-3 text-center">
-            <h1 class="mb-0">Experience</h1>
-            
-          </div>
-        
-      
-    
-
-      
-
-
-
-
-<div class="col-12 ">
-  
-
-  
-  
-
-  
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col ">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border exp-fill">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-
-              <div class="section-subheading card-title exp-title text-muted my-0">Research engineer</div>
-              <div class="section-subheading card-title exp-company text-muted my-0">CMAP, Ecole polytechnique</div>
-              <div class="text-muted exp-meta">
-                Sep 2022 –
-                
-                  Present
-                
-                
-                  <span class="middot-divider"></span>
-                  <span>Palaiseau, France</span>
-                
-              </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border ">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-
-              <div class="section-subheading card-title exp-title text-muted my-0">Postdoctoral reseacher</div>
-              <div class="section-subheading card-title exp-company text-muted my-0">MOX, Politecnico di Milano</div>
-              <div class="text-muted exp-meta">
-                Oct 2021 –
-                
-                  Sep 2022
-                
-                
-                  <span class="middot-divider"></span>
-                  <span>Milan, Italy</span>
-                
-              </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border ">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-
-              <div class="section-subheading card-title exp-title text-muted my-0">Ph.D. student</div>
-              <div class="section-subheading card-title exp-company text-muted my-0">CERFACS</div>
-              <div class="text-muted exp-meta">
-                Aug 2018 –
-                
-                  Oct 2021
-                
-                
-                  <span class="middot-divider"></span>
-                  <span>Toulouse, France</span>
-                
-              </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="row experience">
-    
-    <div class="col-auto text-center flex-column d-none d-sm-flex">
-      <div class="row h-50">
-        <div class="col border-right">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-      <div class="m-2">
-        <span class="badge badge-pill border ">&nbsp;</span>
-      </div>
-      <div class="row h-50">
-        <div class="col ">&nbsp;</div>
-        <div class="col">&nbsp;</div>
-      </div>
-    </div>
-    
-    <div class="col py-2">
-      <div class="card">
-        <div class="card-body">
-
-              <div class="section-subheading card-title exp-title text-muted my-0">Engineering career</div>
-              <div class="section-subheading card-title exp-company text-muted my-0"></div>
-              <div class="text-muted exp-meta">
-                Sep 2006 –
-                
-                  Jul 2018
-                
-                
-              </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-</div>
-
-
-    
-      </div>
-    
-
-    </div>
-  </section>
-
-
-
-  </div>
-
-  <div class="page-footer">
-    
-    
-    <div class="container">
-      <footer class="site-footer">
-
-  
-
-
-
-  
-
-  
-
-  
-  <p class="powered-by">
-    ©2023 Pierre Matalon
-  </p>
-  
-
-  
-  
-
-
-
-
-
-
-  <p class="powered-by">
-    
-    
-    
-      
-      
-      
-      
-      
-      
-      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
-    
-  </p>
-</footer>
-
-    </div>
-    
-  </div>
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-      
-
-    
-    <script src="/js/vendor-bundle.min.9592335d574f7a97010f99b90ad0f310.js"></script>
-
-    
-    
-    
-      
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
-      
-
-      
-      
-
-      
-
-      
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
-        
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" crossorigin="anonymous"></script>
-        
-      
-
-    
-
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-      
-      <script id="search-hit-fuse-template" type="text/x-template">
-        <div class="search-hit" id="summary-{{key}}">
-          <div class="search-hit-content">
-            <div class="search-hit-name">
-              <a href="{{relpermalink}}">{{title}}</a>
-              <div class="article-metadata search-hit-type">{{type}}</div>
-              <p class="search-hit-description">{{snippet}}</p>
-            </div>
-          </div>
-        </div>
-      </script>
-      
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
-      
-    
-
-    
-    
-
-    
-    
-    
-    
-
-    
-    
-      
-      
-      
-      
-      
-      
-      
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-      
-      
-    
-    
-    <script src="/en/js/wowchemy.min.2cc80485e7b9001edba5cdf5b39a1f97.js"></script>
-
-    
-
-
-
-
-
-
+          let div = document.querySelector(`#hal ol.${hal_item.docType_s}`);
+          if (div != undefined)
+            div.appendChild(article_item);
+        });
+      });
+
+  </script>
 </body>
+
 </html>
