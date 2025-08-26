@@ -123,10 +123,7 @@
     }
 
     .hal-title {
-      display: inline-block;
-      width: 75%;
       font-weight: bold;
-      vertical-align: top;
     }
 
     .hal-date {
@@ -209,13 +206,13 @@
           <a href="mailto:pierre.matalon@polytechnique.edu">pierre.matalon@polytechnique.edu</a>
           <ul>
             <li>
-              <a href="https://github.com/pmatalon"><img src="icons/github-mark.svg" alt="GitHub" width="30" height="30"/></a>
+              <a href="https://github.com/pmatalon" data-tooltip="GitHub" target="_blank"><img src="icons/github-mark.svg" alt="GitHub" width="30" height="30"/></a>
             </li>
             <!-- <li>
               <a href="https://hal.science/search/index/?q=*&authIdPerson_i=181259"><i data-feather="book"></i> HAL</a>
             </li> -->
             <li>
-              <a href="https://orcid.org/0000-0002-4288-2289"><img src="icons/ORCID-iD_icon_vector.svg" alt="ORCID iD"/></a>
+              <a href="https://orcid.org/0000-0002-4288-2289" data-tooltip="ORCID" target="_blank"><img src="icons/ORCID-iD_icon_vector.svg" alt="ORCID iD"/></a>
             </li>
           </ul>
         </section>
@@ -259,9 +256,9 @@
     <article>
       <h3>Software</h3>
       <ul>
-        <li><a href="https://github.com/hpc-maths/samurai" target="_blank">samurai</a> - Structured Adaptive mesh and MUlti-Resolution based on Algebra of Intervals</li>
-        <li><a href="https://github.com/pmatalon/fhhos4/" target="_blank">fhhos4</a> - Fast HHO Solver 4 Research</li>
-        <li><a href="https://github.com/hpc-maths/krylov4r" target="_blank">krylov4r</a> - Krylov methods for research</li>
+        <li><a href="https://github.com/hpc-maths/samurai" target="_blank">samurai</a> - Adaptive Cartesian mesher for AMR and multiresolution analysis</li>
+        <li><a href="https://github.com/pmatalon/fhhos4/" target="_blank">fhhos4</a> - HHO solver for diffusion equations using fast multigrid methods</li>
+        <li><a href="https://github.com/hpc-maths/krylov4r" target="_blank">krylov4r</a> - Matlab implementation of Krylov methods for research</li>
     </article>
 
     <!-- <article>
@@ -386,20 +383,20 @@
 
           // liste des liens
           let links_list = document.createElement('ul');
+          // HAL
           links_list.classList.add("link-list");
           {
             let li = document.createElement('li');
             let a = document.createElement('a');
-            // let icon = document.createElement('span');
-            // icon.classList.add("ai");
-            // icon.classList.add("ai-open-access");
-            // a.appendChild(icon);
             a.href = hal_item.uri_s;
             a.innerHTML = "<i class='ai ai-open-access'></i>HAL";
             a.setAttribute('target', '_blank');
+            a.role = "button";
+            a.classList.add("outline");
             li.appendChild(a);
             links_list.appendChild(li);
           }
+          // DOI
           if ( hal_item.doiId_s !== undefined ) {
             let li = document.createElement('li');
             let a = document.createElement('a');
@@ -410,11 +407,13 @@
             else {
               a.innerHTML = "<i class='ai ai-closed-access'></i>DOI";
             }
-            //a.innerText = "DOI";
             a.setAttribute('target', '_blank');
+            a.role = "button";
+            a.classList.add("outline");
             li.appendChild(a);
             links_list.appendChild(li);
           }
+          // arXiv
           if ( hal_item.arxivId_s !== undefined ) {
             let li = document.createElement('li');
             let a = document.createElement('a');
@@ -422,6 +421,8 @@
             a.innerHTML = "<i class='ai ai-open-access'></i>arXiv";
             a.setAttribute('target', '_blank');
             li.appendChild(a);
+            a.role = "button";
+            a.classList.add("outline");
             links_list.appendChild(li);
           }
           article_item.appendChild(links_list);
